@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family:
+      -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue',
+      sans-serif;
+    color-scheme: light;
+  }
+
+  body {
+    min-width: 320px;
+    margin: 0;
+  }
+
+  button,
+  input,
+  textarea {
+    font: inherit;
+  }
+}
+
+@layer components {
+  .ios-icon-button {
+    @apply grid size-11 place-items-center rounded-full border border-white/80 bg-white/80 text-slate-700 shadow-ios-soft outline-none transition hover:-translate-y-0.5 hover:bg-white focus:ring-4 focus:ring-blue-100;
+  }
+
+  .chevron-left,
+  .chevron-right {
+    @apply block size-3 border-b-2 border-l-2 border-current;
+  }
+
+  .chevron-left {
+    transform: translateX(2px) rotate(45deg);
+  }
+
+  .chevron-right {
+    transform: translateX(-2px) rotate(225deg);
+  }
+
+  .month-picker::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+  }
+
+  .calendar-cell {
+    @apply flex min-h-[118px] flex-col rounded-[24px] border border-white/70 bg-white/60 p-2 text-left shadow-[inset_0_1px_0_rgba(255,255,255,0.9)] outline-none transition hover:-translate-y-0.5 hover:bg-white hover:shadow-ios-soft focus:ring-4 focus:ring-blue-100 sm:min-h-[136px] sm:p-3;
+  }
+
+  .calendar-cell-selected {
+    @apply border-blue-200 bg-blue-50/80 shadow-ios-soft;
+  }
+
+}
+
+@layer utilities {
+  .ios-grid-bg {
+    background-image:
+      linear-gradient(rgba(148, 163, 184, 0.12) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(148, 163, 184, 0.12) 1px, transparent 1px);
+    background-size: 34px 34px;
+    mask-image: linear-gradient(to bottom, black 0%, transparent 88%);
+  }
+}

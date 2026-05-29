@@ -1,0 +1,118 @@
+{
+  "version": 2,
+  "days": {
+    "2026-05-25": {
+      "todos": [
+        {
+          "id": "94c13950-5e7c-4cf0-a2e2-46abaff02940",
+          "text": "初始化 skill",
+          "createdAt": "2026-05-25T04:00:00.000Z"
+        },
+        {
+          "id": "09f829b7-7b00-4992-ace6-bc5f2509ea25",
+          "text": "重跑 Playwright 和 Browser Use Track，探索并标记 meanScore 消费者",
+          "createdAt": "2026-05-25T04:00:00.000Z"
+        }
+      ],
+      "inheritedTodoIds": [],
+      "completedTodoIds": [
+        "09f829b7-7b00-4992-ace6-bc5f2509ea25",
+        "94c13950-5e7c-4cf0-a2e2-46abaff02940"
+      ],
+      "actualItems": [
+        {
+          "id": "92e93eed-714c-466d-92f3-2da66b00968b",
+          "text": "阅读其他 skill，学习 skill 规范",
+          "createdAt": "2026-05-25T04:00:00.000Z"
+        },
+        {
+          "id": "df41143e-b292-482a-b20c-ab3a9afd87b1",
+          "text": "帮同事安装 wsl 以及和 codex 的配合",
+          "createdAt": "2026-05-25T04:00:00.000Z"
+        }
+      ]
+    },
+    "2026-05-01": {
+      "todos": [],
+      "inheritedTodoIds": [],
+      "completedTodoIds": [],
+      "actualItems": []
+    },
+    "2026-05-26": {
+      "todos": [
+        {
+          "id": "5b49269f-70bf-434d-bd43-c7adc1836e5d",
+          "text": "规范 skill 和约束",
+          "createdAt": "2026-05-26T04:00:00.000Z"
+        }
+      ],
+      "inheritedTodoIds": [],
+      "completedTodoIds": [
+        "5b49269f-70bf-434d-bd43-c7adc1836e5d"
+      ],
+      "actualItems": [
+        {
+          "id": "30849dec-2a9c-4721-985e-08000efc9391",
+          "text": "尝试 CodeGraph",
+          "createdAt": "2026-05-26T04:00:00.000Z"
+        },
+        {
+          "id": "f4051a9c-e46d-489e-ac7b-31969fcf60ac",
+          "text": "探索 Anthropic 和 OpenAI 的 Skill Creator 的区别",
+          "createdAt": "2026-05-26T04:00:00.000Z"
+        }
+      ]
+    },
+    "2026-05-27": {
+      "todos": [
+        {
+          "id": "f53d6216-a5e9-4a8a-b5ad-f0a702beb8ba",
+          "text": "规范 Card 生成流程",
+          "createdAt": "2026-05-27T04:00:00.000Z"
+        }
+      ],
+      "inheritedTodoIds": [],
+      "completedTodoIds": [
+        "f53d6216-a5e9-4a8a-b5ad-f0a702beb8ba"
+      ],
+      "actualItems": [
+        {
+          "id": "eff4a608-90e9-421a-845a-18ff36b6262a",
+          "text": "优化 POC 产物并汇报给超哥",
+          "createdAt": "2026-05-27T04:00:00.000Z"
+        }
+      ]
+    },
+    "2026-05-28": {
+      "todos": [
+        {
+          "id": "10d5ea0c-35be-4261-a916-f03606955c29",
+          "text": "规范 Card 结构和内容",
+          "createdAt": "2026-05-28T04:00:00.000Z"
+        }
+      ],
+      "inheritedTodoIds": [],
+      "completedTodoIds": [],
+      "actualItems": [
+        {
+          "id": "88123fb2-4dff-4a0f-925d-b6ea6667b40e",
+          "text": "参加入职培训",
+          "createdAt": "2026-05-28T04:00:00.000Z"
+        },
+        {
+          "id": "b04b7007-00c9-4e73-8459-bbe209b7f377",
+          "text": "参加双周会",
+          "createdAt": "2026-05-28T04:00:00.000Z"
+        }
+      ]
+    },
+    "2026-05-29": {
+      "todos": [],
+      "inheritedTodoIds": [
+        "10d5ea0c-35be-4261-a916-f03606955c29"
+      ],
+      "completedTodoIds": [],
+      "actualItems": []
+    }
+  }
+}

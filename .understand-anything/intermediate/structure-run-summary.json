@@ -1,0 +1,73 @@
+[
+  {
+    "batchIndex": 1,
+    "files": [
+      "apps/web/src/components/DayDetail.tsx",
+      "apps/web/src/lib/date.ts",
+      "apps/web/src/lib/todos.ts",
+      "apps/web/src/store/todoStore.ts",
+      "apps/web/src/types/todos.ts"
+    ],
+    "status": 0,
+    "stdout": "",
+    "stderr": "",
+    "outputPath": "D:\\Project\\Personal\\todo-calender\\.understand-anything\\intermediate\\batch-1.json"
+  },
+  {
+    "batchIndex": 2,
+    "files": [
+      "apps/web/src/App.tsx",
+      "apps/web/src/components/CalendarHeader.tsx",
+      "apps/web/src/main.tsx"
+    ],
+    "status": 0,
+    "stdout": "",
+    "stderr": "",
+    "outputPath": "D:\\Project\\Personal\\todo-calender\\.understand-anything\\intermediate\\batch-2.json"
+  },
+  {
+    "batchIndex": 3,
+    "files": [
+      ".prettierrc.json",
+      "package.json",
+      "pnpm-workspace.yaml",
+      "tsconfig.json"
+    ],
+    "status": 0,
+    "stdout": "",
+    "stderr": "",
+    "outputPath": "D:\\Project\\Personal\\todo-calender\\.understand-anything\\intermediate\\batch-3.json"
+  },
+  {
+    "batchIndex": 4,
+    "files": [
+      "apps/web/index.html",
+      "apps/web/package.json",
+      "apps/web/tsconfig.json"
+    ],
+    "status": 0,
+    "stdout": "",
+    "stderr": "",
+    "outputPath": "D:\\Project\\Personal\\todo-calender\\.understand-anything\\intermediate\\batch-4.json"
+  },
+  {
+    "batchIndex": 5,
+    "files": [
+      ".husky/commit-msg",
+      ".husky/pre-commit",
+      "apps/web/data/todos.json",
+      "apps/web/postcss.config.js",
+      "apps/web/src/components/CalendarGrid.tsx",
+      "apps/web/src/lib/holidays.ts",
+      "apps/web/src/styles.css",
+      "apps/web/tailwind.config.ts",
+      "apps/web/vite.config.ts",
+      "commitlint.config.cjs",
+      "eslint.config.js"
+    ],
+    "status": 0,
+    "stdout": "",
+    "stderr": "",
+    "outputPath": "D:\\Project\\Personal\\todo-calender\\.understand-anything\\intermediate\\batch-5.json"
+  }
+]

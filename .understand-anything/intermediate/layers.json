@@ -1,0 +1,63 @@
+[
+  {
+    "id": "layer:workspace-tooling",
+    "name": "工作区与工具链",
+    "description": "根工作区、代码格式化、Lint、提交规范、TypeScript 和 PostCSS/Tailwind 等工程化配置。",
+    "nodeIds": [
+      "file:.husky/commit-msg",
+      "file:.husky/pre-commit",
+      "config:.prettierrc.json",
+      "config:apps/web/package.json",
+      "file:apps/web/postcss.config.js",
+      "file:apps/web/tailwind.config.ts",
+      "config:apps/web/tsconfig.json",
+      "file:commitlint.config.cjs",
+      "file:eslint.config.js",
+      "config:package.json",
+      "config:pnpm-workspace.yaml",
+      "config:tsconfig.json"
+    ]
+  },
+  {
+    "id": "layer:app-shell",
+    "name": "应用入口与布局",
+    "description": "HTML 宿主、React 挂载入口、App 壳层和全局样式，负责把应用组装到首屏。",
+    "nodeIds": [
+      "file:apps/web/index.html",
+      "file:apps/web/src/App.tsx",
+      "file:apps/web/src/main.tsx",
+      "file:apps/web/src/styles.css"
+    ]
+  },
+  {
+    "id": "layer:calendar-ui",
+    "name": "日历界面组件",
+    "description": "面向用户的日历头部、月网格和单日详情组件。",
+    "nodeIds": [
+      "file:apps/web/src/components/CalendarGrid.tsx",
+      "file:apps/web/src/components/CalendarHeader.tsx",
+      "file:apps/web/src/components/DayDetail.tsx"
+    ]
+  },
+  {
+    "id": "layer:state-and-domain",
+    "name": "状态与领域规则",
+    "description": "Zustand store、日期计算、TODO 可见性/继承规则、节假日标记和领域类型。",
+    "nodeIds": [
+      "file:apps/web/src/lib/date.ts",
+      "file:apps/web/src/lib/holidays.ts",
+      "file:apps/web/src/lib/todos.ts",
+      "file:apps/web/src/store/todoStore.ts",
+      "file:apps/web/src/types/todos.ts"
+    ]
+  },
+  {
+    "id": "layer:local-data-api",
+    "name": "本地数据与开发 API",
+    "description": "开发期 JSON API 和本地持久化数据文件。",
+    "nodeIds": [
+      "config:apps/web/data/todos.json",
+      "file:apps/web/vite.config.ts"
+    ]
+  }
+]

@@ -1,0 +1,151 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 4,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": ".prettierrc.json",
+      "language": "json",
+      "fileCategory": "config",
+      "totalLines": 6,
+      "nonEmptyLines": 6,
+      "sections": [
+        {
+          "heading": "singleQuote",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "semi",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "trailingComma",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "printWidth",
+          "level": 1,
+          "line": 5
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 4
+      }
+    },
+    {
+      "path": "package.json",
+      "language": "json",
+      "fileCategory": "config",
+      "totalLines": 29,
+      "nonEmptyLines": 29,
+      "sections": [
+        {
+          "heading": "name",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "private",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "version",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "type",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "packageManager",
+          "level": 1,
+          "line": 6
+        },
+        {
+          "heading": "scripts",
+          "level": 1,
+          "line": 7
+        },
+        {
+          "heading": "devDependencies",
+          "level": 1,
+          "line": 17
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 7
+      }
+    },
+    {
+      "path": "pnpm-workspace.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 6,
+      "nonEmptyLines": 6,
+      "sections": [
+        {
+          "heading": "packages",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "onlyBuiltDependencies",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "allowBuilds",
+          "level": 1,
+          "line": 5
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 3
+      }
+    },
+    {
+      "path": "tsconfig.json",
+      "language": "json",
+      "fileCategory": "config",
+      "totalLines": 4,
+      "nonEmptyLines": 4,
+      "sections": [
+        {
+          "heading": "files",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "references",
+          "level": 1,
+          "line": 3
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 2
+      }
+    }
+  ]
+}

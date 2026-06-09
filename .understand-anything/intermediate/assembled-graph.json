@@ -1,0 +1,2298 @@
+{
+  "version": "1.0.0",
+  "project": {
+    "name": "todo-calender",
+    "languages": [
+      "css",
+      "html",
+      "javascript",
+      "json",
+      "typescript",
+      "yaml"
+    ],
+    "frameworks": [
+      "React",
+      "Vite",
+      "Zustand",
+      "Tailwind CSS",
+      "TypeScript"
+    ],
+    "description": "一个基于 Vite、React 和 TypeScript 的待办日历应用，使用 Zustand 管理日历状态，并通过 JSON 数据文件保存 TODO、继承任务和实际完成记录。",
+    "analyzedAt": "2026-06-09T12:26:02.429Z",
+    "gitCommitHash": "880c1d0fae7340c44c49770c88991b56ce2e525f"
+  },
+  "nodes": [
+    {
+      "id": "file:.husky/commit-msg",
+      "type": "file",
+      "name": "commit-msg",
+      "filePath": ".husky/commit-msg",
+      "summary": "提交信息钩子，调用 commitlint 校验提交消息。",
+      "language": "unknown",
+      "complexity": "simple",
+      "tags": [
+        "项目文件"
+      ],
+      "metrics": {}
+    },
+    {
+      "id": "file:.husky/pre-commit",
+      "type": "file",
+      "name": "pre-commit",
+      "filePath": ".husky/pre-commit",
+      "summary": "提交前钩子，执行仓库质量检查命令。",
+      "language": "unknown",
+      "complexity": "simple",
+      "tags": [
+        "项目文件"
+      ],
+      "metrics": {}
+    },
+    {
+      "id": "config:.prettierrc.json",
+      "type": "config",
+      "name": ".prettierrc.json",
+      "filePath": ".prettierrc.json",
+      "summary": "Prettier 格式化规则配置。",
+      "language": "json",
+      "complexity": "simple",
+      "tags": [
+        "配置"
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 4
+      }
+    },
+    {
+      "id": "config:apps/web/data/todos.json",
+      "type": "config",
+      "name": "todos.json",
+      "filePath": "apps/web/data/todos.json",
+      "summary": "本地待办日历数据文件，作为开发 API 的持久化存储。",
+      "language": "json",
+      "complexity": "moderate",
+      "tags": [
+        "本地数据",
+        "配置"
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 2
+      }
+    },
+    {
+      "id": "file:apps/web/index.html",
+      "type": "file",
+      "name": "index.html",
+      "filePath": "apps/web/index.html",
+      "summary": "Web 应用 HTML 宿主页面，提供 React 挂载点。",
+      "language": "html",
+      "complexity": "simple",
+      "tags": [
+        "项目文件"
+      ],
+      "metrics": {}
+    },
+    {
+      "id": "config:apps/web/package.json",
+      "type": "config",
+      "name": "package.json",
+      "filePath": "apps/web/package.json",
+      "summary": "Web 子应用依赖和脚本配置，声明 React、Vite、Zustand 与 Tailwind。",
+      "language": "json",
+      "complexity": "simple",
+      "tags": [
+        "配置"
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 7
+      }
+    },
+    {
+      "id": "file:apps/web/postcss.config.js",
+      "type": "file",
+      "name": "postcss.config.js",
+      "filePath": "apps/web/postcss.config.js",
+      "summary": "PostCSS 插件配置，启用 Tailwind 与 Autoprefixer。",
+      "language": "javascript",
+      "complexity": "simple",
+      "tags": [
+        "项目文件"
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "id": "file:apps/web/src/App.tsx",
+      "type": "file",
+      "name": "App.tsx",
+      "filePath": "apps/web/src/App.tsx",
+      "summary": "应用壳层，连接 Zustand 日历状态、月份切换、日历网格和日详情面板。",
+      "language": "typescript",
+      "complexity": "simple",
+      "tags": [
+        "源码"
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "id": "file:apps/web/src/components/CalendarGrid.tsx",
+      "type": "file",
+      "name": "CalendarGrid.tsx",
+      "filePath": "apps/web/src/components/CalendarGrid.tsx",
+      "summary": "月视图网格组件，展示日期、节假日标记、待办数量、完成数量和实际记录提示。",
+      "language": "typescript",
+      "complexity": "moderate",
+      "tags": [
+        "界面组件"
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "id": "file:apps/web/src/components/CalendarHeader.tsx",
+      "type": "file",
+      "name": "CalendarHeader.tsx",
+      "filePath": "apps/web/src/components/CalendarHeader.tsx",
+      "summary": "顶部月份导航组件，提供上一月/下一月按钮和原生月份选择器。",
+      "language": "typescript",
+      "complexity": "moderate",
+      "tags": [
+        "界面组件"
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "id": "file:apps/web/src/components/DayDetail.tsx",
+      "type": "file",
+      "name": "DayDetail.tsx",
+      "filePath": "apps/web/src/components/DayDetail.tsx",
+      "summary": "选中日期的详情面板，处理新增、编辑、删除、完成、继承 TODO 和实际记录。",
+      "language": "typescript",
+      "complexity": "complex",
+      "tags": [
+        "界面组件"
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "id": "file:apps/web/src/lib/date.ts",
+      "type": "file",
+      "name": "date.ts",
+      "filePath": "apps/web/src/lib/date.ts",
+      "summary": "日期工具库，封装 DateKey、月份边界、日期加减、日历格生成和中文日期格式化。",
+      "language": "typescript",
+      "complexity": "moderate",
+      "tags": [
+        "业务工具"
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 17,
+        "functionCount": 14,
+        "classCount": 0
+      }
+    },
+    {
+      "id": "file:apps/web/src/lib/holidays.ts",
+      "type": "file",
+      "name": "holidays.ts",
+      "filePath": "apps/web/src/lib/holidays.ts",
+      "summary": "2026 年节假日与调休标记表，并提供日历样式 class 选择函数。",
+      "language": "typescript",
+      "complexity": "simple",
+      "tags": [
+        "业务工具"
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 3,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "id": "file:apps/web/src/lib/todos.ts",
+      "type": "file",
+      "name": "todos.ts",
+      "filePath": "apps/web/src/lib/todos.ts",
+      "summary": "TODO 业务规则库，负责可见任务、完成状态、继承任务和记录对象创建。",
+      "language": "typescript",
+      "complexity": "moderate",
+      "tags": [
+        "业务工具"
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 11,
+        "functionCount": 11,
+        "classCount": 0
+      }
+    },
+    {
+      "id": "file:apps/web/src/main.tsx",
+      "type": "file",
+      "name": "main.tsx",
+      "filePath": "apps/web/src/main.tsx",
+      "summary": "React 应用入口，创建根节点并挂载 App，同时加载全局样式。",
+      "language": "typescript",
+      "complexity": "simple",
+      "tags": [
+        "源码"
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "id": "file:apps/web/src/store/todoStore.ts",
+      "type": "file",
+      "name": "todoStore.ts",
+      "filePath": "apps/web/src/store/todoStore.ts",
+      "summary": "Zustand 状态中心，负责数据迁移、读取、延迟保存和所有日历写操作。",
+      "language": "typescript",
+      "complexity": "complex",
+      "tags": [
+        "状态管理"
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "id": "file:apps/web/src/styles.css",
+      "type": "file",
+      "name": "styles.css",
+      "filePath": "apps/web/src/styles.css",
+      "summary": "Tailwind 基础样式和 iOS 风格视觉辅助 class。",
+      "language": "css",
+      "complexity": "simple",
+      "tags": [
+        "项目文件"
+      ],
+      "metrics": {}
+    },
+    {
+      "id": "file:apps/web/src/types/todos.ts",
+      "type": "file",
+      "name": "todos.ts",
+      "filePath": "apps/web/src/types/todos.ts",
+      "summary": "待办日历的数据模型定义，包括日期键、日记录、任务、实际记录和保存状态。",
+      "language": "typescript",
+      "complexity": "simple",
+      "tags": [
+        "类型模型"
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "id": "file:apps/web/tailwind.config.ts",
+      "type": "file",
+      "name": "tailwind.config.ts",
+      "filePath": "apps/web/tailwind.config.ts",
+      "summary": "Tailwind 内容扫描和主题扩展配置。",
+      "language": "typescript",
+      "complexity": "simple",
+      "tags": [
+        "源码"
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "id": "config:apps/web/tsconfig.json",
+      "type": "config",
+      "name": "tsconfig.json",
+      "filePath": "apps/web/tsconfig.json",
+      "summary": "Web 子应用 TypeScript 编译配置。",
+      "language": "json",
+      "complexity": "simple",
+      "tags": [
+        "配置"
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 3
+      }
+    },
+    {
+      "id": "file:apps/web/vite.config.ts",
+      "type": "file",
+      "name": "vite.config.ts",
+      "filePath": "apps/web/vite.config.ts",
+      "summary": "Vite 配置，同时定义开发期 /api/todos JSON 读写中间件。",
+      "language": "typescript",
+      "complexity": "simple",
+      "tags": [
+        "开发服务"
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 4,
+        "classCount": 0
+      }
+    },
+    {
+      "id": "file:commitlint.config.cjs",
+      "type": "file",
+      "name": "commitlint.config.cjs",
+      "filePath": "commitlint.config.cjs",
+      "summary": "提交信息规范配置，使用 conventional commits 规则。",
+      "language": "javascript",
+      "complexity": "simple",
+      "tags": [
+        "项目文件"
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "id": "file:eslint.config.js",
+      "type": "file",
+      "name": "eslint.config.js",
+      "filePath": "eslint.config.js",
+      "summary": "仓库 ESLint 扁平配置。",
+      "language": "javascript",
+      "complexity": "simple",
+      "tags": [
+        "项目文件"
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "id": "config:package.json",
+      "type": "config",
+      "name": "package.json",
+      "filePath": "package.json",
+      "summary": "根工作区脚本和开发依赖配置，转发 dev/build/lint/typecheck 到 Web 子包。",
+      "language": "json",
+      "complexity": "simple",
+      "tags": [
+        "配置"
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 7
+      }
+    },
+    {
+      "id": "config:pnpm-workspace.yaml",
+      "type": "config",
+      "name": "pnpm-workspace.yaml",
+      "filePath": "pnpm-workspace.yaml",
+      "summary": "pnpm monorepo 工作区配置，包含 apps/* 包。",
+      "language": "yaml",
+      "complexity": "simple",
+      "tags": [
+        "配置"
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 3
+      }
+    },
+    {
+      "id": "config:tsconfig.json",
+      "type": "config",
+      "name": "tsconfig.json",
+      "filePath": "tsconfig.json",
+      "summary": "根 TypeScript 项目引用配置。",
+      "language": "json",
+      "complexity": "simple",
+      "tags": [
+        "配置"
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 2
+      }
+    },
+    {
+      "id": "function:apps/web/src/components/DayDetail.tsx:DayDetail",
+      "type": "function",
+      "name": "DayDetail",
+      "filePath": "apps/web/src/components/DayDetail.tsx",
+      "lineStart": 29,
+      "lineEnd": 313,
+      "summary": "DayDetail 定义在 apps/web/src/components/DayDetail.tsx，承担该文件中的主要交互或业务逻辑。",
+      "complexity": "complex",
+      "tags": [
+        "函数",
+        "组件逻辑"
+      ]
+    },
+    {
+      "id": "function:apps/web/src/lib/date.ts:toDateKey",
+      "type": "function",
+      "name": "toDateKey",
+      "filePath": "apps/web/src/lib/date.ts",
+      "lineStart": 23,
+      "lineEnd": 25,
+      "summary": "toDateKey 定义在 apps/web/src/lib/date.ts，承担该文件中的主要交互或业务逻辑。",
+      "complexity": "simple",
+      "tags": [
+        "函数",
+        "业务逻辑"
+      ]
+    },
+    {
+      "id": "function:apps/web/src/lib/date.ts:createDate",
+      "type": "function",
+      "name": "createDate",
+      "filePath": "apps/web/src/lib/date.ts",
+      "lineStart": 27,
+      "lineEnd": 29,
+      "summary": "createDate 定义在 apps/web/src/lib/date.ts，承担该文件中的主要交互或业务逻辑。",
+      "complexity": "simple",
+      "tags": [
+        "函数",
+        "业务逻辑"
+      ]
+    },
+    {
+      "id": "function:apps/web/src/lib/date.ts:dateKeyFromParts",
+      "type": "function",
+      "name": "dateKeyFromParts",
+      "filePath": "apps/web/src/lib/date.ts",
+      "lineStart": 31,
+      "lineEnd": 33,
+      "summary": "dateKeyFromParts 定义在 apps/web/src/lib/date.ts，承担该文件中的主要交互或业务逻辑。",
+      "complexity": "simple",
+      "tags": [
+        "函数",
+        "业务逻辑"
+      ]
+    },
+    {
+      "id": "function:apps/web/src/lib/date.ts:parseDateKey",
+      "type": "function",
+      "name": "parseDateKey",
+      "filePath": "apps/web/src/lib/date.ts",
+      "lineStart": 35,
+      "lineEnd": 43,
+      "summary": "parseDateKey 定义在 apps/web/src/lib/date.ts，承担该文件中的主要交互或业务逻辑。",
+      "complexity": "simple",
+      "tags": [
+        "函数",
+        "业务逻辑"
+      ]
+    },
+    {
+      "id": "function:apps/web/src/lib/date.ts:monthValue",
+      "type": "function",
+      "name": "monthValue",
+      "filePath": "apps/web/src/lib/date.ts",
+      "lineStart": 45,
+      "lineEnd": 47,
+      "summary": "monthValue 定义在 apps/web/src/lib/date.ts，承担该文件中的主要交互或业务逻辑。",
+      "complexity": "simple",
+      "tags": [
+        "函数",
+        "业务逻辑"
+      ]
+    },
+    {
+      "id": "function:apps/web/src/lib/date.ts:parseMonthValue",
+      "type": "function",
+      "name": "parseMonthValue",
+      "filePath": "apps/web/src/lib/date.ts",
+      "lineStart": 49,
+      "lineEnd": 52,
+      "summary": "parseMonthValue 定义在 apps/web/src/lib/date.ts，承担该文件中的主要交互或业务逻辑。",
+      "complexity": "simple",
+      "tags": [
+        "函数",
+        "业务逻辑"
+      ]
+    },
+    {
+      "id": "function:apps/web/src/lib/date.ts:isBeforeMinimumMonth",
+      "type": "function",
+      "name": "isBeforeMinimumMonth",
+      "filePath": "apps/web/src/lib/date.ts",
+      "lineStart": 54,
+      "lineEnd": 56,
+      "summary": "isBeforeMinimumMonth 定义在 apps/web/src/lib/date.ts，承担该文件中的主要交互或业务逻辑。",
+      "complexity": "simple",
+      "tags": [
+        "函数",
+        "业务逻辑"
+      ]
+    },
+    {
+      "id": "function:apps/web/src/lib/date.ts:isBeforeMinimumDate",
+      "type": "function",
+      "name": "isBeforeMinimumDate",
+      "filePath": "apps/web/src/lib/date.ts",
+      "lineStart": 58,
+      "lineEnd": 61,
+      "summary": "isBeforeMinimumDate 定义在 apps/web/src/lib/date.ts，承担该文件中的主要交互或业务逻辑。",
+      "complexity": "simple",
+      "tags": [
+        "函数",
+        "业务逻辑"
+      ]
+    },
+    {
+      "id": "function:apps/web/src/lib/date.ts:addMonths",
+      "type": "function",
+      "name": "addMonths",
+      "filePath": "apps/web/src/lib/date.ts",
+      "lineStart": 63,
+      "lineEnd": 66,
+      "summary": "addMonths 定义在 apps/web/src/lib/date.ts，承担该文件中的主要交互或业务逻辑。",
+      "complexity": "simple",
+      "tags": [
+        "函数",
+        "业务逻辑"
+      ]
+    },
+    {
+      "id": "function:apps/web/src/lib/date.ts:addDays",
+      "type": "function",
+      "name": "addDays",
+      "filePath": "apps/web/src/lib/date.ts",
+      "lineStart": 68,
+      "lineEnd": 71,
+      "summary": "addDays 定义在 apps/web/src/lib/date.ts，承担该文件中的主要交互或业务逻辑。",
+      "complexity": "simple",
+      "tags": [
+        "函数",
+        "业务逻辑"
+      ]
+    },
+    {
+      "id": "function:apps/web/src/lib/date.ts:getMonthLabel",
+      "type": "function",
+      "name": "getMonthLabel",
+      "filePath": "apps/web/src/lib/date.ts",
+      "lineStart": 73,
+      "lineEnd": 78,
+      "summary": "getMonthLabel 定义在 apps/web/src/lib/date.ts，承担该文件中的主要交互或业务逻辑。",
+      "complexity": "simple",
+      "tags": [
+        "函数",
+        "业务逻辑"
+      ]
+    },
+    {
+      "id": "function:apps/web/src/lib/date.ts:getWeekdayLabel",
+      "type": "function",
+      "name": "getWeekdayLabel",
+      "filePath": "apps/web/src/lib/date.ts",
+      "lineStart": 80,
+      "lineEnd": 84,
+      "summary": "getWeekdayLabel 定义在 apps/web/src/lib/date.ts，承担该文件中的主要交互或业务逻辑。",
+      "complexity": "simple",
+      "tags": [
+        "函数",
+        "业务逻辑"
+      ]
+    },
+    {
+      "id": "function:apps/web/src/lib/date.ts:getCalendarDays",
+      "type": "function",
+      "name": "getCalendarDays",
+      "filePath": "apps/web/src/lib/date.ts",
+      "lineStart": 86,
+      "lineEnd": 108,
+      "summary": "getCalendarDays 定义在 apps/web/src/lib/date.ts，承担该文件中的主要交互或业务逻辑。",
+      "complexity": "simple",
+      "tags": [
+        "函数",
+        "业务逻辑"
+      ]
+    },
+    {
+      "id": "function:apps/web/src/lib/date.ts:compareDateKeys",
+      "type": "function",
+      "name": "compareDateKeys",
+      "filePath": "apps/web/src/lib/date.ts",
+      "lineStart": 110,
+      "lineEnd": 112,
+      "summary": "compareDateKeys 定义在 apps/web/src/lib/date.ts，承担该文件中的主要交互或业务逻辑。",
+      "complexity": "simple",
+      "tags": [
+        "函数",
+        "业务逻辑"
+      ]
+    },
+    {
+      "id": "function:apps/web/src/lib/todos.ts:createEmptyDay",
+      "type": "function",
+      "name": "createEmptyDay",
+      "filePath": "apps/web/src/lib/todos.ts",
+      "lineStart": 11,
+      "lineEnd": 18,
+      "summary": "createEmptyDay 定义在 apps/web/src/lib/todos.ts，承担该文件中的主要交互或业务逻辑。",
+      "complexity": "simple",
+      "tags": [
+        "函数",
+        "业务逻辑"
+      ]
+    },
+    {
+      "id": "function:apps/web/src/lib/todos.ts:ensureDay",
+      "type": "function",
+      "name": "ensureDay",
+      "filePath": "apps/web/src/lib/todos.ts",
+      "lineStart": 20,
+      "lineEnd": 22,
+      "summary": "ensureDay 定义在 apps/web/src/lib/todos.ts，承担该文件中的主要交互或业务逻辑。",
+      "complexity": "simple",
+      "tags": [
+        "函数",
+        "业务逻辑"
+      ]
+    },
+    {
+      "id": "function:apps/web/src/lib/todos.ts:getAllTodos",
+      "type": "function",
+      "name": "getAllTodos",
+      "filePath": "apps/web/src/lib/todos.ts",
+      "lineStart": 24,
+      "lineEnd": 36,
+      "summary": "getAllTodos 定义在 apps/web/src/lib/todos.ts，承担该文件中的主要交互或业务逻辑。",
+      "complexity": "simple",
+      "tags": [
+        "函数",
+        "业务逻辑"
+      ]
+    },
+    {
+      "id": "function:apps/web/src/lib/todos.ts:getTodoById",
+      "type": "function",
+      "name": "getTodoById",
+      "filePath": "apps/web/src/lib/todos.ts",
+      "lineStart": 38,
+      "lineEnd": 40,
+      "summary": "getTodoById 定义在 apps/web/src/lib/todos.ts，承担该文件中的主要交互或业务逻辑。",
+      "complexity": "simple",
+      "tags": [
+        "函数",
+        "业务逻辑"
+      ]
+    },
+    {
+      "id": "function:apps/web/src/lib/todos.ts:getCompletionDate",
+      "type": "function",
+      "name": "getCompletionDate",
+      "filePath": "apps/web/src/lib/todos.ts",
+      "lineStart": 42,
+      "lineEnd": 47,
+      "summary": "getCompletionDate 定义在 apps/web/src/lib/todos.ts，承担该文件中的主要交互或业务逻辑。",
+      "complexity": "simple",
+      "tags": [
+        "函数",
+        "业务逻辑"
+      ]
+    },
+    {
+      "id": "function:apps/web/src/lib/todos.ts:isTodoCompletedAtDate",
+      "type": "function",
+      "name": "isTodoCompletedAtDate",
+      "filePath": "apps/web/src/lib/todos.ts",
+      "lineStart": 49,
+      "lineEnd": 52,
+      "summary": "isTodoCompletedAtDate 定义在 apps/web/src/lib/todos.ts，承担该文件中的主要交互或业务逻辑。",
+      "complexity": "simple",
+      "tags": [
+        "函数",
+        "业务逻辑"
+      ]
+    },
+    {
+      "id": "function:apps/web/src/lib/todos.ts:getVisibleTodos",
+      "type": "function",
+      "name": "getVisibleTodos",
+      "filePath": "apps/web/src/lib/todos.ts",
+      "lineStart": 54,
+      "lineEnd": 77,
+      "summary": "getVisibleTodos 定义在 apps/web/src/lib/todos.ts，承担该文件中的主要交互或业务逻辑。",
+      "complexity": "simple",
+      "tags": [
+        "函数",
+        "业务逻辑"
+      ]
+    },
+    {
+      "id": "function:apps/web/src/lib/todos.ts:getOpenTodoCount",
+      "type": "function",
+      "name": "getOpenTodoCount",
+      "filePath": "apps/web/src/lib/todos.ts",
+      "lineStart": 79,
+      "lineEnd": 81,
+      "summary": "getOpenTodoCount 定义在 apps/web/src/lib/todos.ts，承担该文件中的主要交互或业务逻辑。",
+      "complexity": "simple",
+      "tags": [
+        "函数",
+        "业务逻辑"
+      ]
+    },
+    {
+      "id": "function:apps/web/src/lib/todos.ts:getCompletedTodoCount",
+      "type": "function",
+      "name": "getCompletedTodoCount",
+      "filePath": "apps/web/src/lib/todos.ts",
+      "lineStart": 83,
+      "lineEnd": 85,
+      "summary": "getCompletedTodoCount 定义在 apps/web/src/lib/todos.ts，承担该文件中的主要交互或业务逻辑。",
+      "complexity": "simple",
+      "tags": [
+        "函数",
+        "业务逻辑"
+      ]
+    },
+    {
+      "id": "function:apps/web/src/lib/todos.ts:makeTodo",
+      "type": "function",
+      "name": "makeTodo",
+      "filePath": "apps/web/src/lib/todos.ts",
+      "lineStart": 87,
+      "lineEnd": 93,
+      "summary": "makeTodo 定义在 apps/web/src/lib/todos.ts，承担该文件中的主要交互或业务逻辑。",
+      "complexity": "simple",
+      "tags": [
+        "函数",
+        "业务逻辑"
+      ]
+    },
+    {
+      "id": "function:apps/web/src/lib/todos.ts:makeActualItem",
+      "type": "function",
+      "name": "makeActualItem",
+      "filePath": "apps/web/src/lib/todos.ts",
+      "lineStart": 95,
+      "lineEnd": 101,
+      "summary": "makeActualItem 定义在 apps/web/src/lib/todos.ts，承担该文件中的主要交互或业务逻辑。",
+      "complexity": "simple",
+      "tags": [
+        "函数",
+        "业务逻辑"
+      ]
+    },
+    {
+      "id": "function:apps/web/src/store/todoStore.ts:migrateData",
+      "type": "function",
+      "name": "migrateData",
+      "filePath": "apps/web/src/store/todoStore.ts",
+      "lineStart": 45,
+      "lineEnd": 84,
+      "summary": "migrateData 定义在 apps/web/src/store/todoStore.ts，承担该文件中的主要交互或业务逻辑。",
+      "complexity": "simple",
+      "tags": [
+        "函数",
+        "业务逻辑"
+      ]
+    },
+    {
+      "id": "function:apps/web/src/store/todoStore.ts:fetchData",
+      "type": "function",
+      "name": "fetchData",
+      "filePath": "apps/web/src/store/todoStore.ts",
+      "lineStart": 86,
+      "lineEnd": 96,
+      "summary": "fetchData 定义在 apps/web/src/store/todoStore.ts，承担该文件中的主要交互或业务逻辑。",
+      "complexity": "simple",
+      "tags": [
+        "函数",
+        "业务逻辑"
+      ]
+    },
+    {
+      "id": "function:apps/web/src/store/todoStore.ts:writeData",
+      "type": "function",
+      "name": "writeData",
+      "filePath": "apps/web/src/store/todoStore.ts",
+      "lineStart": 98,
+      "lineEnd": 110,
+      "summary": "writeData 定义在 apps/web/src/store/todoStore.ts，承担该文件中的主要交互或业务逻辑。",
+      "complexity": "simple",
+      "tags": [
+        "函数",
+        "业务逻辑"
+      ]
+    },
+    {
+      "id": "function:apps/web/src/App.tsx:App",
+      "type": "function",
+      "name": "App",
+      "filePath": "apps/web/src/App.tsx",
+      "lineStart": 8,
+      "lineEnd": 77,
+      "summary": "App 定义在 apps/web/src/App.tsx，承担该文件中的主要交互或业务逻辑。",
+      "complexity": "simple",
+      "tags": [
+        "函数",
+        "业务逻辑"
+      ]
+    },
+    {
+      "id": "function:apps/web/src/components/CalendarHeader.tsx:CalendarHeader",
+      "type": "function",
+      "name": "CalendarHeader",
+      "filePath": "apps/web/src/components/CalendarHeader.tsx",
+      "lineStart": 10,
+      "lineEnd": 84,
+      "summary": "CalendarHeader 定义在 apps/web/src/components/CalendarHeader.tsx，承担该文件中的主要交互或业务逻辑。",
+      "complexity": "simple",
+      "tags": [
+        "函数",
+        "组件逻辑"
+      ]
+    },
+    {
+      "id": "function:apps/web/src/components/CalendarGrid.tsx:CalendarGrid",
+      "type": "function",
+      "name": "CalendarGrid",
+      "filePath": "apps/web/src/components/CalendarGrid.tsx",
+      "lineStart": 20,
+      "lineEnd": 140,
+      "summary": "CalendarGrid 定义在 apps/web/src/components/CalendarGrid.tsx，承担该文件中的主要交互或业务逻辑。",
+      "complexity": "moderate",
+      "tags": [
+        "函数",
+        "组件逻辑"
+      ]
+    },
+    {
+      "id": "function:apps/web/src/lib/holidays.ts:getCalendarMark",
+      "type": "function",
+      "name": "getCalendarMark",
+      "filePath": "apps/web/src/lib/holidays.ts",
+      "lineStart": 50,
+      "lineEnd": 52,
+      "summary": "getCalendarMark 定义在 apps/web/src/lib/holidays.ts，承担该文件中的主要交互或业务逻辑。",
+      "complexity": "simple",
+      "tags": [
+        "函数",
+        "业务逻辑"
+      ]
+    },
+    {
+      "id": "function:apps/web/src/lib/holidays.ts:getCalendarMarkClassName",
+      "type": "function",
+      "name": "getCalendarMarkClassName",
+      "filePath": "apps/web/src/lib/holidays.ts",
+      "lineStart": 54,
+      "lineEnd": 58,
+      "summary": "getCalendarMarkClassName 定义在 apps/web/src/lib/holidays.ts，承担该文件中的主要交互或业务逻辑。",
+      "complexity": "simple",
+      "tags": [
+        "函数",
+        "业务逻辑"
+      ]
+    },
+    {
+      "id": "function:apps/web/src/lib/holidays.ts:getCalendarMarkBadgeClassName",
+      "type": "function",
+      "name": "getCalendarMarkBadgeClassName",
+      "filePath": "apps/web/src/lib/holidays.ts",
+      "lineStart": 60,
+      "lineEnd": 62,
+      "summary": "getCalendarMarkBadgeClassName 定义在 apps/web/src/lib/holidays.ts，承担该文件中的主要交互或业务逻辑。",
+      "complexity": "simple",
+      "tags": [
+        "函数",
+        "业务逻辑"
+      ]
+    },
+    {
+      "id": "function:apps/web/vite.config.ts:sendJson",
+      "type": "function",
+      "name": "sendJson",
+      "filePath": "apps/web/vite.config.ts",
+      "lineStart": 11,
+      "lineEnd": 15,
+      "summary": "sendJson 定义在 apps/web/vite.config.ts，承担该文件中的主要交互或业务逻辑。",
+      "complexity": "simple",
+      "tags": [
+        "函数",
+        "业务逻辑"
+      ]
+    },
+    {
+      "id": "function:apps/web/vite.config.ts:readBody",
+      "type": "function",
+      "name": "readBody",
+      "filePath": "apps/web/vite.config.ts",
+      "lineStart": 17,
+      "lineEnd": 29,
+      "summary": "readBody 定义在 apps/web/vite.config.ts，承担该文件中的主要交互或业务逻辑。",
+      "complexity": "simple",
+      "tags": [
+        "函数",
+        "业务逻辑"
+      ]
+    },
+    {
+      "id": "function:apps/web/vite.config.ts:hasValidShape",
+      "type": "function",
+      "name": "hasValidShape",
+      "filePath": "apps/web/vite.config.ts",
+      "lineStart": 31,
+      "lineEnd": 35,
+      "summary": "hasValidShape 定义在 apps/web/vite.config.ts，承担该文件中的主要交互或业务逻辑。",
+      "complexity": "simple",
+      "tags": [
+        "函数",
+        "业务逻辑"
+      ]
+    },
+    {
+      "id": "function:apps/web/vite.config.ts:todoJsonApi",
+      "type": "function",
+      "name": "todoJsonApi",
+      "filePath": "apps/web/vite.config.ts",
+      "lineStart": 37,
+      "lineEnd": 72,
+      "summary": "todoJsonApi 定义在 apps/web/vite.config.ts，承担该文件中的主要交互或业务逻辑。",
+      "complexity": "simple",
+      "tags": [
+        "函数",
+        "业务逻辑"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge:contains:6153c49b6c",
+      "source": "file:apps/web/src/components/DayDetail.tsx",
+      "target": "function:apps/web/src/components/DayDetail.tsx:DayDetail",
+      "type": "contains",
+      "weight": 1,
+      "direction": "forward",
+      "description": "DayDetail.tsx 包含函数 DayDetail。"
+    },
+    {
+      "id": "edge:contains:c9eb7f282b",
+      "source": "file:apps/web/src/lib/date.ts",
+      "target": "function:apps/web/src/lib/date.ts:toDateKey",
+      "type": "contains",
+      "weight": 1,
+      "direction": "forward",
+      "description": "date.ts 包含函数 toDateKey。"
+    },
+    {
+      "id": "edge:contains:25b6b78627",
+      "source": "file:apps/web/src/lib/date.ts",
+      "target": "function:apps/web/src/lib/date.ts:createDate",
+      "type": "contains",
+      "weight": 1,
+      "direction": "forward",
+      "description": "date.ts 包含函数 createDate。"
+    },
+    {
+      "id": "edge:contains:328cbe78cf",
+      "source": "file:apps/web/src/lib/date.ts",
+      "target": "function:apps/web/src/lib/date.ts:dateKeyFromParts",
+      "type": "contains",
+      "weight": 1,
+      "direction": "forward",
+      "description": "date.ts 包含函数 dateKeyFromParts。"
+    },
+    {
+      "id": "edge:contains:d3ce831b98",
+      "source": "file:apps/web/src/lib/date.ts",
+      "target": "function:apps/web/src/lib/date.ts:parseDateKey",
+      "type": "contains",
+      "weight": 1,
+      "direction": "forward",
+      "description": "date.ts 包含函数 parseDateKey。"
+    },
+    {
+      "id": "edge:contains:ae749c651c",
+      "source": "file:apps/web/src/lib/date.ts",
+      "target": "function:apps/web/src/lib/date.ts:monthValue",
+      "type": "contains",
+      "weight": 1,
+      "direction": "forward",
+      "description": "date.ts 包含函数 monthValue。"
+    },
+    {
+      "id": "edge:contains:f017a6246a",
+      "source": "file:apps/web/src/lib/date.ts",
+      "target": "function:apps/web/src/lib/date.ts:parseMonthValue",
+      "type": "contains",
+      "weight": 1,
+      "direction": "forward",
+      "description": "date.ts 包含函数 parseMonthValue。"
+    },
+    {
+      "id": "edge:contains:a537ea4400",
+      "source": "file:apps/web/src/lib/date.ts",
+      "target": "function:apps/web/src/lib/date.ts:isBeforeMinimumMonth",
+      "type": "contains",
+      "weight": 1,
+      "direction": "forward",
+      "description": "date.ts 包含函数 isBeforeMinimumMonth。"
+    },
+    {
+      "id": "edge:contains:9396cfab4c",
+      "source": "file:apps/web/src/lib/date.ts",
+      "target": "function:apps/web/src/lib/date.ts:isBeforeMinimumDate",
+      "type": "contains",
+      "weight": 1,
+      "direction": "forward",
+      "description": "date.ts 包含函数 isBeforeMinimumDate。"
+    },
+    {
+      "id": "edge:contains:1d8f35a5a5",
+      "source": "file:apps/web/src/lib/date.ts",
+      "target": "function:apps/web/src/lib/date.ts:addMonths",
+      "type": "contains",
+      "weight": 1,
+      "direction": "forward",
+      "description": "date.ts 包含函数 addMonths。"
+    },
+    {
+      "id": "edge:contains:8a3d68f66b",
+      "source": "file:apps/web/src/lib/date.ts",
+      "target": "function:apps/web/src/lib/date.ts:addDays",
+      "type": "contains",
+      "weight": 1,
+      "direction": "forward",
+      "description": "date.ts 包含函数 addDays。"
+    },
+    {
+      "id": "edge:contains:1e5d45b632",
+      "source": "file:apps/web/src/lib/date.ts",
+      "target": "function:apps/web/src/lib/date.ts:getMonthLabel",
+      "type": "contains",
+      "weight": 1,
+      "direction": "forward",
+      "description": "date.ts 包含函数 getMonthLabel。"
+    },
+    {
+      "id": "edge:contains:4f9e96b23e",
+      "source": "file:apps/web/src/lib/date.ts",
+      "target": "function:apps/web/src/lib/date.ts:getWeekdayLabel",
+      "type": "contains",
+      "weight": 1,
+      "direction": "forward",
+      "description": "date.ts 包含函数 getWeekdayLabel。"
+    },
+    {
+      "id": "edge:contains:a02189db6e",
+      "source": "file:apps/web/src/lib/date.ts",
+      "target": "function:apps/web/src/lib/date.ts:getCalendarDays",
+      "type": "contains",
+      "weight": 1,
+      "direction": "forward",
+      "description": "date.ts 包含函数 getCalendarDays。"
+    },
+    {
+      "id": "edge:contains:f918732abd",
+      "source": "file:apps/web/src/lib/date.ts",
+      "target": "function:apps/web/src/lib/date.ts:compareDateKeys",
+      "type": "contains",
+      "weight": 1,
+      "direction": "forward",
+      "description": "date.ts 包含函数 compareDateKeys。"
+    },
+    {
+      "id": "edge:contains:f86f752a43",
+      "source": "file:apps/web/src/lib/todos.ts",
+      "target": "function:apps/web/src/lib/todos.ts:createEmptyDay",
+      "type": "contains",
+      "weight": 1,
+      "direction": "forward",
+      "description": "todos.ts 包含函数 createEmptyDay。"
+    },
+    {
+      "id": "edge:contains:f13874e585",
+      "source": "file:apps/web/src/lib/todos.ts",
+      "target": "function:apps/web/src/lib/todos.ts:ensureDay",
+      "type": "contains",
+      "weight": 1,
+      "direction": "forward",
+      "description": "todos.ts 包含函数 ensureDay。"
+    },
+    {
+      "id": "edge:contains:73929005de",
+      "source": "file:apps/web/src/lib/todos.ts",
+      "target": "function:apps/web/src/lib/todos.ts:getAllTodos",
+      "type": "contains",
+      "weight": 1,
+      "direction": "forward",
+      "description": "todos.ts 包含函数 getAllTodos。"
+    },
+    {
+      "id": "edge:contains:3044216deb",
+      "source": "file:apps/web/src/lib/todos.ts",
+      "target": "function:apps/web/src/lib/todos.ts:getTodoById",
+      "type": "contains",
+      "weight": 1,
+      "direction": "forward",
+      "description": "todos.ts 包含函数 getTodoById。"
+    },
+    {
+      "id": "edge:contains:6f8e81feb7",
+      "source": "file:apps/web/src/lib/todos.ts",
+      "target": "function:apps/web/src/lib/todos.ts:getCompletionDate",
+      "type": "contains",
+      "weight": 1,
+      "direction": "forward",
+      "description": "todos.ts 包含函数 getCompletionDate。"
+    },
+    {
+      "id": "edge:contains:5cb4cfbaf3",
+      "source": "file:apps/web/src/lib/todos.ts",
+      "target": "function:apps/web/src/lib/todos.ts:isTodoCompletedAtDate",
+      "type": "contains",
+      "weight": 1,
+      "direction": "forward",
+      "description": "todos.ts 包含函数 isTodoCompletedAtDate。"
+    },
+    {
+      "id": "edge:contains:8b73c68449",
+      "source": "file:apps/web/src/lib/todos.ts",
+      "target": "function:apps/web/src/lib/todos.ts:getVisibleTodos",
+      "type": "contains",
+      "weight": 1,
+      "direction": "forward",
+      "description": "todos.ts 包含函数 getVisibleTodos。"
+    },
+    {
+      "id": "edge:contains:826c78f51c",
+      "source": "file:apps/web/src/lib/todos.ts",
+      "target": "function:apps/web/src/lib/todos.ts:getOpenTodoCount",
+      "type": "contains",
+      "weight": 1,
+      "direction": "forward",
+      "description": "todos.ts 包含函数 getOpenTodoCount。"
+    },
+    {
+      "id": "edge:contains:f20d1a0829",
+      "source": "file:apps/web/src/lib/todos.ts",
+      "target": "function:apps/web/src/lib/todos.ts:getCompletedTodoCount",
+      "type": "contains",
+      "weight": 1,
+      "direction": "forward",
+      "description": "todos.ts 包含函数 getCompletedTodoCount。"
+    },
+    {
+      "id": "edge:contains:cfa22fa9fc",
+      "source": "file:apps/web/src/lib/todos.ts",
+      "target": "function:apps/web/src/lib/todos.ts:makeTodo",
+      "type": "contains",
+      "weight": 1,
+      "direction": "forward",
+      "description": "todos.ts 包含函数 makeTodo。"
+    },
+    {
+      "id": "edge:contains:95d2e3aa8f",
+      "source": "file:apps/web/src/lib/todos.ts",
+      "target": "function:apps/web/src/lib/todos.ts:makeActualItem",
+      "type": "contains",
+      "weight": 1,
+      "direction": "forward",
+      "description": "todos.ts 包含函数 makeActualItem。"
+    },
+    {
+      "id": "edge:contains:fffc91af6d",
+      "source": "file:apps/web/src/store/todoStore.ts",
+      "target": "function:apps/web/src/store/todoStore.ts:migrateData",
+      "type": "contains",
+      "weight": 1,
+      "direction": "forward",
+      "description": "todoStore.ts 包含函数 migrateData。"
+    },
+    {
+      "id": "edge:contains:d946fde5ac",
+      "source": "file:apps/web/src/store/todoStore.ts",
+      "target": "function:apps/web/src/store/todoStore.ts:fetchData",
+      "type": "contains",
+      "weight": 1,
+      "direction": "forward",
+      "description": "todoStore.ts 包含函数 fetchData。"
+    },
+    {
+      "id": "edge:contains:e5f8ed694f",
+      "source": "file:apps/web/src/store/todoStore.ts",
+      "target": "function:apps/web/src/store/todoStore.ts:writeData",
+      "type": "contains",
+      "weight": 1,
+      "direction": "forward",
+      "description": "todoStore.ts 包含函数 writeData。"
+    },
+    {
+      "id": "edge:contains:478ebf2d17",
+      "source": "file:apps/web/src/App.tsx",
+      "target": "function:apps/web/src/App.tsx:App",
+      "type": "contains",
+      "weight": 1,
+      "direction": "forward",
+      "description": "App.tsx 包含函数 App。"
+    },
+    {
+      "id": "edge:contains:20c01ff66f",
+      "source": "file:apps/web/src/components/CalendarHeader.tsx",
+      "target": "function:apps/web/src/components/CalendarHeader.tsx:CalendarHeader",
+      "type": "contains",
+      "weight": 1,
+      "direction": "forward",
+      "description": "CalendarHeader.tsx 包含函数 CalendarHeader。"
+    },
+    {
+      "id": "edge:contains:1fe2393a0e",
+      "source": "file:apps/web/src/components/CalendarGrid.tsx",
+      "target": "function:apps/web/src/components/CalendarGrid.tsx:CalendarGrid",
+      "type": "contains",
+      "weight": 1,
+      "direction": "forward",
+      "description": "CalendarGrid.tsx 包含函数 CalendarGrid。"
+    },
+    {
+      "id": "edge:contains:f7316cb92e",
+      "source": "file:apps/web/src/lib/holidays.ts",
+      "target": "function:apps/web/src/lib/holidays.ts:getCalendarMark",
+      "type": "contains",
+      "weight": 1,
+      "direction": "forward",
+      "description": "holidays.ts 包含函数 getCalendarMark。"
+    },
+    {
+      "id": "edge:contains:0b39d4f095",
+      "source": "file:apps/web/src/lib/holidays.ts",
+      "target": "function:apps/web/src/lib/holidays.ts:getCalendarMarkClassName",
+      "type": "contains",
+      "weight": 1,
+      "direction": "forward",
+      "description": "holidays.ts 包含函数 getCalendarMarkClassName。"
+    },
+    {
+      "id": "edge:contains:58e3d29818",
+      "source": "file:apps/web/src/lib/holidays.ts",
+      "target": "function:apps/web/src/lib/holidays.ts:getCalendarMarkBadgeClassName",
+      "type": "contains",
+      "weight": 1,
+      "direction": "forward",
+      "description": "holidays.ts 包含函数 getCalendarMarkBadgeClassName。"
+    },
+    {
+      "id": "edge:contains:6003fd3e39",
+      "source": "file:apps/web/vite.config.ts",
+      "target": "function:apps/web/vite.config.ts:sendJson",
+      "type": "contains",
+      "weight": 1,
+      "direction": "forward",
+      "description": "vite.config.ts 包含函数 sendJson。"
+    },
+    {
+      "id": "edge:contains:914d6727b8",
+      "source": "file:apps/web/vite.config.ts",
+      "target": "function:apps/web/vite.config.ts:readBody",
+      "type": "contains",
+      "weight": 1,
+      "direction": "forward",
+      "description": "vite.config.ts 包含函数 readBody。"
+    },
+    {
+      "id": "edge:contains:7b088341f9",
+      "source": "file:apps/web/vite.config.ts",
+      "target": "function:apps/web/vite.config.ts:hasValidShape",
+      "type": "contains",
+      "weight": 1,
+      "direction": "forward",
+      "description": "vite.config.ts 包含函数 hasValidShape。"
+    },
+    {
+      "id": "edge:contains:f422c11201",
+      "source": "file:apps/web/vite.config.ts",
+      "target": "function:apps/web/vite.config.ts:todoJsonApi",
+      "type": "contains",
+      "weight": 1,
+      "direction": "forward",
+      "description": "vite.config.ts 包含函数 todoJsonApi。"
+    },
+    {
+      "id": "edge:imports:21bc763337",
+      "source": "file:apps/web/src/App.tsx",
+      "target": "file:apps/web/src/components/CalendarGrid.tsx",
+      "type": "imports",
+      "weight": 0.7,
+      "direction": "forward",
+      "description": "apps/web/src/App.tsx 导入 apps/web/src/components/CalendarGrid.tsx。"
+    },
+    {
+      "id": "edge:imports:84d3131011",
+      "source": "file:apps/web/src/App.tsx",
+      "target": "file:apps/web/src/components/CalendarHeader.tsx",
+      "type": "imports",
+      "weight": 0.7,
+      "direction": "forward",
+      "description": "apps/web/src/App.tsx 导入 apps/web/src/components/CalendarHeader.tsx。"
+    },
+    {
+      "id": "edge:imports:cedb0c270d",
+      "source": "file:apps/web/src/App.tsx",
+      "target": "file:apps/web/src/components/DayDetail.tsx",
+      "type": "imports",
+      "weight": 0.7,
+      "direction": "forward",
+      "description": "apps/web/src/App.tsx 导入 apps/web/src/components/DayDetail.tsx。"
+    },
+    {
+      "id": "edge:imports:bee75eedc5",
+      "source": "file:apps/web/src/App.tsx",
+      "target": "file:apps/web/src/lib/date.ts",
+      "type": "imports",
+      "weight": 0.7,
+      "direction": "forward",
+      "description": "apps/web/src/App.tsx 导入 apps/web/src/lib/date.ts。"
+    },
+    {
+      "id": "edge:imports:e15abc924a",
+      "source": "file:apps/web/src/App.tsx",
+      "target": "file:apps/web/src/store/todoStore.ts",
+      "type": "imports",
+      "weight": 0.7,
+      "direction": "forward",
+      "description": "apps/web/src/App.tsx 导入 apps/web/src/store/todoStore.ts。"
+    },
+    {
+      "id": "edge:imports:b8e731ab8c",
+      "source": "file:apps/web/src/components/CalendarGrid.tsx",
+      "target": "file:apps/web/src/lib/date.ts",
+      "type": "imports",
+      "weight": 0.7,
+      "direction": "forward",
+      "description": "apps/web/src/components/CalendarGrid.tsx 导入 apps/web/src/lib/date.ts。"
+    },
+    {
+      "id": "edge:imports:493d908bf7",
+      "source": "file:apps/web/src/components/CalendarGrid.tsx",
+      "target": "file:apps/web/src/lib/holidays.ts",
+      "type": "imports",
+      "weight": 0.7,
+      "direction": "forward",
+      "description": "apps/web/src/components/CalendarGrid.tsx 导入 apps/web/src/lib/holidays.ts。"
+    },
+    {
+      "id": "edge:imports:b553b83bce",
+      "source": "file:apps/web/src/components/CalendarGrid.tsx",
+      "target": "file:apps/web/src/lib/todos.ts",
+      "type": "imports",
+      "weight": 0.7,
+      "direction": "forward",
+      "description": "apps/web/src/components/CalendarGrid.tsx 导入 apps/web/src/lib/todos.ts。"
+    },
+    {
+      "id": "edge:imports:ab422dfb87",
+      "source": "file:apps/web/src/components/CalendarGrid.tsx",
+      "target": "file:apps/web/src/types/todos.ts",
+      "type": "imports",
+      "weight": 0.7,
+      "direction": "forward",
+      "description": "apps/web/src/components/CalendarGrid.tsx 导入 apps/web/src/types/todos.ts。"
+    },
+    {
+      "id": "edge:imports:77cfb27acb",
+      "source": "file:apps/web/src/components/CalendarHeader.tsx",
+      "target": "file:apps/web/src/lib/date.ts",
+      "type": "imports",
+      "weight": 0.7,
+      "direction": "forward",
+      "description": "apps/web/src/components/CalendarHeader.tsx 导入 apps/web/src/lib/date.ts。"
+    },
+    {
+      "id": "edge:imports:603f27a9cc",
+      "source": "file:apps/web/src/components/DayDetail.tsx",
+      "target": "file:apps/web/src/lib/date.ts",
+      "type": "imports",
+      "weight": 0.7,
+      "direction": "forward",
+      "description": "apps/web/src/components/DayDetail.tsx 导入 apps/web/src/lib/date.ts。"
+    },
+    {
+      "id": "edge:imports:69a187ec94",
+      "source": "file:apps/web/src/components/DayDetail.tsx",
+      "target": "file:apps/web/src/lib/todos.ts",
+      "type": "imports",
+      "weight": 0.7,
+      "direction": "forward",
+      "description": "apps/web/src/components/DayDetail.tsx 导入 apps/web/src/lib/todos.ts。"
+    },
+    {
+      "id": "edge:imports:64481e20d6",
+      "source": "file:apps/web/src/components/DayDetail.tsx",
+      "target": "file:apps/web/src/types/todos.ts",
+      "type": "imports",
+      "weight": 0.7,
+      "direction": "forward",
+      "description": "apps/web/src/components/DayDetail.tsx 导入 apps/web/src/types/todos.ts。"
+    },
+    {
+      "id": "edge:imports:02d329437f",
+      "source": "file:apps/web/src/lib/date.ts",
+      "target": "file:apps/web/src/types/todos.ts",
+      "type": "imports",
+      "weight": 0.7,
+      "direction": "forward",
+      "description": "apps/web/src/lib/date.ts 导入 apps/web/src/types/todos.ts。"
+    },
+    {
+      "id": "edge:imports:c844bf8e64",
+      "source": "file:apps/web/src/lib/holidays.ts",
+      "target": "file:apps/web/src/types/todos.ts",
+      "type": "imports",
+      "weight": 0.7,
+      "direction": "forward",
+      "description": "apps/web/src/lib/holidays.ts 导入 apps/web/src/types/todos.ts。"
+    },
+    {
+      "id": "edge:imports:2caef4b11d",
+      "source": "file:apps/web/src/lib/todos.ts",
+      "target": "file:apps/web/src/lib/date.ts",
+      "type": "imports",
+      "weight": 0.7,
+      "direction": "forward",
+      "description": "apps/web/src/lib/todos.ts 导入 apps/web/src/lib/date.ts。"
+    },
+    {
+      "id": "edge:imports:19fe41315e",
+      "source": "file:apps/web/src/lib/todos.ts",
+      "target": "file:apps/web/src/types/todos.ts",
+      "type": "imports",
+      "weight": 0.7,
+      "direction": "forward",
+      "description": "apps/web/src/lib/todos.ts 导入 apps/web/src/types/todos.ts。"
+    },
+    {
+      "id": "edge:imports:8b16849994",
+      "source": "file:apps/web/src/main.tsx",
+      "target": "file:apps/web/src/App.tsx",
+      "type": "imports",
+      "weight": 0.7,
+      "direction": "forward",
+      "description": "apps/web/src/main.tsx 导入 apps/web/src/App.tsx。"
+    },
+    {
+      "id": "edge:imports:6740920e82",
+      "source": "file:apps/web/src/main.tsx",
+      "target": "file:apps/web/src/styles.css",
+      "type": "imports",
+      "weight": 0.7,
+      "direction": "forward",
+      "description": "apps/web/src/main.tsx 导入 apps/web/src/styles.css。"
+    },
+    {
+      "id": "edge:imports:173b4219e4",
+      "source": "file:apps/web/src/store/todoStore.ts",
+      "target": "file:apps/web/src/lib/date.ts",
+      "type": "imports",
+      "weight": 0.7,
+      "direction": "forward",
+      "description": "apps/web/src/store/todoStore.ts 导入 apps/web/src/lib/date.ts。"
+    },
+    {
+      "id": "edge:imports:b2aac659f4",
+      "source": "file:apps/web/src/store/todoStore.ts",
+      "target": "file:apps/web/src/lib/todos.ts",
+      "type": "imports",
+      "weight": 0.7,
+      "direction": "forward",
+      "description": "apps/web/src/store/todoStore.ts 导入 apps/web/src/lib/todos.ts。"
+    },
+    {
+      "id": "edge:imports:b31494503a",
+      "source": "file:apps/web/src/store/todoStore.ts",
+      "target": "file:apps/web/src/types/todos.ts",
+      "type": "imports",
+      "weight": 0.7,
+      "direction": "forward",
+      "description": "apps/web/src/store/todoStore.ts 导入 apps/web/src/types/todos.ts。"
+    },
+    {
+      "id": "edge:calls:766053274f",
+      "source": "function:apps/web/src/components/DayDetail.tsx:DayDetail",
+      "target": "function:apps/web/src/lib/todos.ts:ensureDay",
+      "type": "calls",
+      "weight": 0.8,
+      "direction": "forward",
+      "description": "DayDetail 在第 48 行调用 ensureDay。"
+    },
+    {
+      "id": "edge:calls:03295c1826",
+      "source": "function:apps/web/src/components/DayDetail.tsx:DayDetail",
+      "target": "function:apps/web/src/lib/todos.ts:getVisibleTodos",
+      "type": "calls",
+      "weight": 0.8,
+      "direction": "forward",
+      "description": "DayDetail 在第 49 行调用 getVisibleTodos。"
+    },
+    {
+      "id": "edge:calls:2578fdd4e1",
+      "source": "function:apps/web/src/components/DayDetail.tsx:DayDetail",
+      "target": "function:apps/web/src/lib/date.ts:addDays",
+      "type": "calls",
+      "weight": 0.8,
+      "direction": "forward",
+      "description": "DayDetail 在第 52 行调用 addDays。"
+    },
+    {
+      "id": "edge:calls:8b9e0bc234",
+      "source": "function:apps/web/src/components/DayDetail.tsx:DayDetail",
+      "target": "function:apps/web/src/lib/date.ts:parseDateKey",
+      "type": "calls",
+      "weight": 0.8,
+      "direction": "forward",
+      "description": "DayDetail 在第 53 行调用 parseDateKey。"
+    },
+    {
+      "id": "edge:calls:91630c093a",
+      "source": "function:apps/web/src/components/DayDetail.tsx:DayDetail",
+      "target": "function:apps/web/src/lib/date.ts:getMonthLabel",
+      "type": "calls",
+      "weight": 0.8,
+      "direction": "forward",
+      "description": "DayDetail 在第 196 行调用 getMonthLabel。"
+    },
+    {
+      "id": "edge:calls:4fde18a471",
+      "source": "function:apps/web/src/components/DayDetail.tsx:DayDetail",
+      "target": "function:apps/web/src/lib/date.ts:getWeekdayLabel",
+      "type": "calls",
+      "weight": 0.8,
+      "direction": "forward",
+      "description": "DayDetail 在第 198 行调用 getWeekdayLabel。"
+    },
+    {
+      "id": "edge:calls:a965a92f7d",
+      "source": "function:apps/web/src/lib/date.ts:dateKeyFromParts",
+      "target": "function:apps/web/src/lib/date.ts:toDateKey",
+      "type": "calls",
+      "weight": 0.8,
+      "direction": "forward",
+      "description": "dateKeyFromParts 在第 32 行调用 toDateKey。"
+    },
+    {
+      "id": "edge:calls:7f1c516ec0",
+      "source": "function:apps/web/src/lib/date.ts:dateKeyFromParts",
+      "target": "function:apps/web/src/lib/date.ts:createDate",
+      "type": "calls",
+      "weight": 0.8,
+      "direction": "forward",
+      "description": "dateKeyFromParts 在第 32 行调用 createDate。"
+    },
+    {
+      "id": "edge:calls:e02fdc320a",
+      "source": "function:apps/web/src/lib/date.ts:parseDateKey",
+      "target": "function:apps/web/src/lib/date.ts:createDate",
+      "type": "calls",
+      "weight": 0.8,
+      "direction": "forward",
+      "description": "parseDateKey 在第 41 行调用 createDate。"
+    },
+    {
+      "id": "edge:calls:da5682cbfc",
+      "source": "function:apps/web/src/lib/date.ts:isBeforeMinimumDate",
+      "target": "function:apps/web/src/lib/date.ts:parseDateKey",
+      "type": "calls",
+      "weight": 0.8,
+      "direction": "forward",
+      "description": "isBeforeMinimumDate 在第 59 行调用 parseDateKey。"
+    },
+    {
+      "id": "edge:calls:983df0cdaa",
+      "source": "function:apps/web/src/lib/date.ts:isBeforeMinimumDate",
+      "target": "function:apps/web/src/lib/date.ts:isBeforeMinimumMonth",
+      "type": "calls",
+      "weight": 0.8,
+      "direction": "forward",
+      "description": "isBeforeMinimumDate 在第 60 行调用 isBeforeMinimumMonth。"
+    },
+    {
+      "id": "edge:calls:a26627bf71",
+      "source": "function:apps/web/src/lib/date.ts:addMonths",
+      "target": "function:apps/web/src/lib/date.ts:createDate",
+      "type": "calls",
+      "weight": 0.8,
+      "direction": "forward",
+      "description": "addMonths 在第 64 行调用 createDate。"
+    },
+    {
+      "id": "edge:calls:c5d9c307eb",
+      "source": "function:apps/web/src/lib/date.ts:addDays",
+      "target": "function:apps/web/src/lib/date.ts:parseDateKey",
+      "type": "calls",
+      "weight": 0.8,
+      "direction": "forward",
+      "description": "addDays 在第 69 行调用 parseDateKey。"
+    },
+    {
+      "id": "edge:calls:1011bdd1d8",
+      "source": "function:apps/web/src/lib/date.ts:addDays",
+      "target": "function:apps/web/src/lib/date.ts:toDateKey",
+      "type": "calls",
+      "weight": 0.8,
+      "direction": "forward",
+      "description": "addDays 在第 70 行调用 toDateKey。"
+    },
+    {
+      "id": "edge:calls:9bf4041006",
+      "source": "function:apps/web/src/lib/date.ts:addDays",
+      "target": "function:apps/web/src/lib/date.ts:createDate",
+      "type": "calls",
+      "weight": 0.8,
+      "direction": "forward",
+      "description": "addDays 在第 70 行调用 createDate。"
+    },
+    {
+      "id": "edge:calls:5c558da9f4",
+      "source": "function:apps/web/src/lib/date.ts:getMonthLabel",
+      "target": "function:apps/web/src/lib/date.ts:createDate",
+      "type": "calls",
+      "weight": 0.8,
+      "direction": "forward",
+      "description": "getMonthLabel 在第 77 行调用 createDate。"
+    },
+    {
+      "id": "edge:calls:0c06a338e7",
+      "source": "function:apps/web/src/lib/date.ts:getWeekdayLabel",
+      "target": "function:apps/web/src/lib/date.ts:parseDateKey",
+      "type": "calls",
+      "weight": 0.8,
+      "direction": "forward",
+      "description": "getWeekdayLabel 在第 83 行调用 parseDateKey。"
+    },
+    {
+      "id": "edge:calls:2f1fbb6d8f",
+      "source": "function:apps/web/src/lib/date.ts:getCalendarDays",
+      "target": "function:apps/web/src/lib/date.ts:createDate",
+      "type": "calls",
+      "weight": 0.8,
+      "direction": "forward",
+      "description": "getCalendarDays 在第 87 行调用 createDate。"
+    },
+    {
+      "id": "edge:calls:a30d0b239b",
+      "source": "function:apps/web/src/lib/date.ts:getCalendarDays",
+      "target": "function:apps/web/src/lib/date.ts:toDateKey",
+      "type": "calls",
+      "weight": 0.8,
+      "direction": "forward",
+      "description": "getCalendarDays 在第 89 行调用 toDateKey。"
+    },
+    {
+      "id": "edge:calls:7064001781",
+      "source": "function:apps/web/src/lib/date.ts:getCalendarDays",
+      "target": "function:apps/web/src/lib/date.ts:createDate",
+      "type": "calls",
+      "weight": 0.8,
+      "direction": "forward",
+      "description": "getCalendarDays 在第 93 行调用 createDate。"
+    },
+    {
+      "id": "edge:calls:9fc3021cfd",
+      "source": "function:apps/web/src/lib/date.ts:getCalendarDays",
+      "target": "function:apps/web/src/lib/date.ts:toDateKey",
+      "type": "calls",
+      "weight": 0.8,
+      "direction": "forward",
+      "description": "getCalendarDays 在第 94 行调用 toDateKey。"
+    },
+    {
+      "id": "edge:calls:8bbea559f4",
+      "source": "function:apps/web/src/lib/date.ts:getCalendarDays",
+      "target": "function:apps/web/src/lib/date.ts:isBeforeMinimumDate",
+      "type": "calls",
+      "weight": 0.8,
+      "direction": "forward",
+      "description": "getCalendarDays 在第 102 行调用 isBeforeMinimumDate。"
+    },
+    {
+      "id": "edge:calls:be9a9f6807",
+      "source": "function:apps/web/src/lib/todos.ts:ensureDay",
+      "target": "function:apps/web/src/lib/todos.ts:createEmptyDay",
+      "type": "calls",
+      "weight": 0.8,
+      "direction": "forward",
+      "description": "ensureDay 在第 21 行调用 createEmptyDay。"
+    },
+    {
+      "id": "edge:calls:1c089019c3",
+      "source": "function:apps/web/src/lib/todos.ts:getAllTodos",
+      "target": "function:apps/web/src/lib/date.ts:compareDateKeys",
+      "type": "calls",
+      "weight": 0.8,
+      "direction": "forward",
+      "description": "getAllTodos 在第 33 行调用 compareDateKeys。"
+    },
+    {
+      "id": "edge:calls:5f4a44bb7e",
+      "source": "function:apps/web/src/lib/todos.ts:getTodoById",
+      "target": "function:apps/web/src/lib/todos.ts:getAllTodos",
+      "type": "calls",
+      "weight": 0.8,
+      "direction": "forward",
+      "description": "getTodoById 在第 39 行调用 getAllTodos。"
+    },
+    {
+      "id": "edge:calls:f3186e8235",
+      "source": "function:apps/web/src/lib/todos.ts:isTodoCompletedAtDate",
+      "target": "function:apps/web/src/lib/todos.ts:getCompletionDate",
+      "type": "calls",
+      "weight": 0.8,
+      "direction": "forward",
+      "description": "isTodoCompletedAtDate 在第 50 行调用 getCompletionDate。"
+    },
+    {
+      "id": "edge:calls:3bd0415d02",
+      "source": "function:apps/web/src/lib/todos.ts:isTodoCompletedAtDate",
+      "target": "function:apps/web/src/lib/date.ts:compareDateKeys",
+      "type": "calls",
+      "weight": 0.8,
+      "direction": "forward",
+      "description": "isTodoCompletedAtDate 在第 51 行调用 compareDateKeys。"
+    },
+    {
+      "id": "edge:calls:e88813da63",
+      "source": "function:apps/web/src/lib/todos.ts:getVisibleTodos",
+      "target": "function:apps/web/src/lib/todos.ts:ensureDay",
+      "type": "calls",
+      "weight": 0.8,
+      "direction": "forward",
+      "description": "getVisibleTodos 在第 55 行调用 ensureDay。"
+    },
+    {
+      "id": "edge:calls:bf6a64868f",
+      "source": "function:apps/web/src/lib/todos.ts:getVisibleTodos",
+      "target": "function:apps/web/src/lib/todos.ts:ensureDay",
+      "type": "calls",
+      "weight": 0.8,
+      "direction": "forward",
+      "description": "getVisibleTodos 在第 56 行调用 ensureDay。"
+    },
+    {
+      "id": "edge:calls:4bd23da941",
+      "source": "function:apps/web/src/lib/todos.ts:getVisibleTodos",
+      "target": "function:apps/web/src/lib/date.ts:addDays",
+      "type": "calls",
+      "weight": 0.8,
+      "direction": "forward",
+      "description": "getVisibleTodos 在第 56 行调用 addDays。"
+    },
+    {
+      "id": "edge:calls:a1dda01d71",
+      "source": "function:apps/web/src/lib/todos.ts:getVisibleTodos",
+      "target": "function:apps/web/src/lib/todos.ts:getAllTodos",
+      "type": "calls",
+      "weight": 0.8,
+      "direction": "forward",
+      "description": "getVisibleTodos 在第 57 行调用 getAllTodos。"
+    },
+    {
+      "id": "edge:calls:c1ec481ba4",
+      "source": "function:apps/web/src/lib/todos.ts:getVisibleTodos",
+      "target": "function:apps/web/src/lib/date.ts:compareDateKeys",
+      "type": "calls",
+      "weight": 0.8,
+      "direction": "forward",
+      "description": "getVisibleTodos 在第 68 行调用 compareDateKeys。"
+    },
+    {
+      "id": "edge:calls:5f128773a1",
+      "source": "function:apps/web/src/lib/todos.ts:getVisibleTodos",
+      "target": "function:apps/web/src/lib/todos.ts:isTodoCompletedAtDate",
+      "type": "calls",
+      "weight": 0.8,
+      "direction": "forward",
+      "description": "getVisibleTodos 在第 74 行调用 isTodoCompletedAtDate。"
+    },
+    {
+      "id": "edge:calls:ec6ce6c7d7",
+      "source": "function:apps/web/src/lib/todos.ts:getOpenTodoCount",
+      "target": "function:apps/web/src/lib/todos.ts:getVisibleTodos",
+      "type": "calls",
+      "weight": 0.8,
+      "direction": "forward",
+      "description": "getOpenTodoCount 在第 80 行调用 getVisibleTodos。"
+    },
+    {
+      "id": "edge:calls:4f06138fca",
+      "source": "function:apps/web/src/lib/todos.ts:getCompletedTodoCount",
+      "target": "function:apps/web/src/lib/todos.ts:getVisibleTodos",
+      "type": "calls",
+      "weight": 0.8,
+      "direction": "forward",
+      "description": "getCompletedTodoCount 在第 84 行调用 getVisibleTodos。"
+    },
+    {
+      "id": "edge:calls:cb71a93550",
+      "source": "function:apps/web/src/store/todoStore.ts:fetchData",
+      "target": "function:apps/web/src/store/todoStore.ts:migrateData",
+      "type": "calls",
+      "weight": 0.8,
+      "direction": "forward",
+      "description": "fetchData 在第 91 行调用 migrateData。"
+    },
+    {
+      "id": "edge:calls:f3e0a9749b",
+      "source": "function:apps/web/src/store/todoStore.ts:fetchData",
+      "target": "function:apps/web/src/store/todoStore.ts:writeData",
+      "type": "calls",
+      "weight": 0.8,
+      "direction": "forward",
+      "description": "fetchData 在第 93 行调用 writeData。"
+    },
+    {
+      "id": "edge:calls:b947068d2b",
+      "source": "function:apps/web/src/components/CalendarHeader.tsx:CalendarHeader",
+      "target": "function:apps/web/src/lib/date.ts:addMonths",
+      "type": "calls",
+      "weight": 0.8,
+      "direction": "forward",
+      "description": "CalendarHeader 在第 12 行调用 addMonths。"
+    },
+    {
+      "id": "edge:calls:cf74caf3a2",
+      "source": "function:apps/web/src/components/CalendarHeader.tsx:CalendarHeader",
+      "target": "function:apps/web/src/lib/date.ts:addMonths",
+      "type": "calls",
+      "weight": 0.8,
+      "direction": "forward",
+      "description": "CalendarHeader 在第 13 行调用 addMonths。"
+    },
+    {
+      "id": "edge:calls:09162df460",
+      "source": "function:apps/web/src/components/CalendarHeader.tsx:CalendarHeader",
+      "target": "function:apps/web/src/lib/date.ts:isBeforeMinimumMonth",
+      "type": "calls",
+      "weight": 0.8,
+      "direction": "forward",
+      "description": "CalendarHeader 在第 14 行调用 isBeforeMinimumMonth。"
+    },
+    {
+      "id": "edge:calls:b360f26f7b",
+      "source": "function:apps/web/src/components/CalendarHeader.tsx:CalendarHeader",
+      "target": "function:apps/web/src/lib/date.ts:getMonthLabel",
+      "type": "calls",
+      "weight": 0.8,
+      "direction": "forward",
+      "description": "CalendarHeader 在第 33 行调用 getMonthLabel。"
+    },
+    {
+      "id": "edge:calls:6e3e5bd9a7",
+      "source": "function:apps/web/src/components/CalendarHeader.tsx:CalendarHeader",
+      "target": "function:apps/web/src/lib/date.ts:monthValue",
+      "type": "calls",
+      "weight": 0.8,
+      "direction": "forward",
+      "description": "CalendarHeader 在第 65 行调用 monthValue。"
+    },
+    {
+      "id": "edge:calls:0300a439b3",
+      "source": "function:apps/web/src/components/CalendarGrid.tsx:CalendarGrid",
+      "target": "function:apps/web/src/lib/date.ts:getCalendarDays",
+      "type": "calls",
+      "weight": 0.8,
+      "direction": "forward",
+      "description": "CalendarGrid 在第 27 行调用 getCalendarDays。"
+    },
+    {
+      "id": "edge:calls:3f3651cddc",
+      "source": "function:apps/web/src/components/CalendarGrid.tsx:CalendarGrid",
+      "target": "function:apps/web/src/lib/todos.ts:ensureDay",
+      "type": "calls",
+      "weight": 0.8,
+      "direction": "forward",
+      "description": "CalendarGrid 在第 41 行调用 ensureDay。"
+    },
+    {
+      "id": "edge:calls:fde7de5240",
+      "source": "function:apps/web/src/components/CalendarGrid.tsx:CalendarGrid",
+      "target": "function:apps/web/src/lib/holidays.ts:getCalendarMark",
+      "type": "calls",
+      "weight": 0.8,
+      "direction": "forward",
+      "description": "CalendarGrid 在第 42 行调用 getCalendarMark。"
+    },
+    {
+      "id": "edge:calls:ea83da9b3a",
+      "source": "function:apps/web/src/components/CalendarGrid.tsx:CalendarGrid",
+      "target": "function:apps/web/src/lib/todos.ts:getOpenTodoCount",
+      "type": "calls",
+      "weight": 0.8,
+      "direction": "forward",
+      "description": "CalendarGrid 在第 43 行调用 getOpenTodoCount。"
+    },
+    {
+      "id": "edge:calls:cbc8be6c7e",
+      "source": "function:apps/web/src/components/CalendarGrid.tsx:CalendarGrid",
+      "target": "function:apps/web/src/lib/todos.ts:getCompletedTodoCount",
+      "type": "calls",
+      "weight": 0.8,
+      "direction": "forward",
+      "description": "CalendarGrid 在第 44 行调用 getCompletedTodoCount。"
+    },
+    {
+      "id": "edge:calls:9f2d0fc01b",
+      "source": "function:apps/web/src/components/CalendarGrid.tsx:CalendarGrid",
+      "target": "function:apps/web/src/lib/todos.ts:getVisibleTodos",
+      "type": "calls",
+      "weight": 0.8,
+      "direction": "forward",
+      "description": "CalendarGrid 在第 49 行调用 getVisibleTodos。"
+    },
+    {
+      "id": "edge:calls:c6cbeb8acf",
+      "source": "function:apps/web/src/components/CalendarGrid.tsx:CalendarGrid",
+      "target": "function:apps/web/src/lib/holidays.ts:getCalendarMarkClassName",
+      "type": "calls",
+      "weight": 0.8,
+      "direction": "forward",
+      "description": "CalendarGrid 在第 82 行调用 getCalendarMarkClassName。"
+    },
+    {
+      "id": "edge:calls:c444ee7f1b",
+      "source": "function:apps/web/src/components/CalendarGrid.tsx:CalendarGrid",
+      "target": "function:apps/web/src/lib/holidays.ts:getCalendarMarkBadgeClassName",
+      "type": "calls",
+      "weight": 0.8,
+      "direction": "forward",
+      "description": "CalendarGrid 在第 103 行调用 getCalendarMarkBadgeClassName。"
+    },
+    {
+      "id": "edge:reads_from:dadb9c7311",
+      "source": "file:apps/web/src/store/todoStore.ts",
+      "target": "config:apps/web/data/todos.json",
+      "type": "reads_from",
+      "weight": 0.5,
+      "direction": "forward",
+      "description": "todoStore 通过 /api/todos 读取本地 JSON 数据。"
+    },
+    {
+      "id": "edge:writes_to:8db7c0b574",
+      "source": "file:apps/web/src/store/todoStore.ts",
+      "target": "config:apps/web/data/todos.json",
+      "type": "writes_to",
+      "weight": 0.5,
+      "direction": "forward",
+      "description": "todoStore 在状态变更后通过 PUT /api/todos 写回本地 JSON 数据。"
+    },
+    {
+      "id": "edge:serves:f3ed948ec0",
+      "source": "file:apps/web/vite.config.ts",
+      "target": "config:apps/web/data/todos.json",
+      "type": "serves",
+      "weight": 0.5,
+      "direction": "forward",
+      "description": "Vite 开发中间件把 todos.json 暴露为 /api/todos。"
+    },
+    {
+      "id": "edge:routes:0b747de45d",
+      "source": "file:apps/web/vite.config.ts",
+      "target": "file:apps/web/src/store/todoStore.ts",
+      "type": "routes",
+      "weight": 0.5,
+      "direction": "forward",
+      "description": "Vite API 路由与前端 store 的 fetch/writeData 调用相互配合。"
+    },
+    {
+      "id": "edge:configures:d14ad4bedd",
+      "source": "config:pnpm-workspace.yaml",
+      "target": "config:package.json",
+      "type": "configures",
+      "weight": 0.6,
+      "direction": "forward",
+      "description": "pnpm workspace 配置根包所在的工作区边界。"
+    },
+    {
+      "id": "edge:configures:de03b82be1",
+      "source": "config:package.json",
+      "target": "config:apps/web/package.json",
+      "type": "configures",
+      "weight": 0.6,
+      "direction": "forward",
+      "description": "根 package 脚本委派到 Web 子应用包。"
+    },
+    {
+      "id": "edge:configures:84da58e394",
+      "source": "config:tsconfig.json",
+      "target": "config:apps/web/tsconfig.json",
+      "type": "configures",
+      "weight": 0.6,
+      "direction": "forward",
+      "description": "根 TypeScript 配置引用 Web 子项目配置。"
+    },
+    {
+      "id": "edge:configures:9d0bc003dd",
+      "source": "config:apps/web/tsconfig.json",
+      "target": "file:apps/web/src/main.tsx",
+      "type": "configures",
+      "weight": 0.6,
+      "direction": "forward",
+      "description": "Web TypeScript 配置约束应用入口和源码编译。"
+    },
+    {
+      "id": "edge:depends_on:d22eb317b5",
+      "source": "config:apps/web/package.json",
+      "target": "file:apps/web/vite.config.ts",
+      "type": "depends_on",
+      "weight": 0.6,
+      "direction": "forward",
+      "description": "Web 包脚本和依赖驱动 Vite 配置运行。"
+    },
+    {
+      "id": "edge:serves:d267b9effd",
+      "source": "file:apps/web/index.html",
+      "target": "file:apps/web/src/main.tsx",
+      "type": "serves",
+      "weight": 0.5,
+      "direction": "forward",
+      "description": "HTML 宿主页面加载 React 入口脚本。"
+    },
+    {
+      "id": "edge:configures:5493044147",
+      "source": "file:apps/web/postcss.config.js",
+      "target": "file:apps/web/src/styles.css",
+      "type": "configures",
+      "weight": 0.6,
+      "direction": "forward",
+      "description": "PostCSS 配置处理 Tailwind 样式入口。"
+    },
+    {
+      "id": "edge:configures:e30c4242f6",
+      "source": "file:apps/web/tailwind.config.ts",
+      "target": "file:apps/web/src/styles.css",
+      "type": "configures",
+      "weight": 0.6,
+      "direction": "forward",
+      "description": "Tailwind 配置决定全局样式可扫描的 class 来源。"
+    },
+    {
+      "id": "edge:configures:08e80e9f34",
+      "source": "file:eslint.config.js",
+      "target": "file:apps/web/src/App.tsx",
+      "type": "configures",
+      "weight": 0.6,
+      "direction": "forward",
+      "description": "ESLint 配置约束前端源码质量规则。"
+    },
+    {
+      "id": "edge:configures:a0437c745e",
+      "source": "config:.prettierrc.json",
+      "target": "config:package.json",
+      "type": "configures",
+      "weight": 0.6,
+      "direction": "forward",
+      "description": "Prettier 配置服务于根格式化脚本。"
+    },
+    {
+      "id": "edge:configures:a4ed98f25c",
+      "source": "file:commitlint.config.cjs",
+      "target": "file:.husky/commit-msg",
+      "type": "configures",
+      "weight": 0.6,
+      "direction": "forward",
+      "description": "commitlint 配置被 commit-msg 钩子使用。"
+    },
+    {
+      "id": "edge:depends_on:0c8e4fb3b8",
+      "source": "file:.husky/commit-msg",
+      "target": "file:commitlint.config.cjs",
+      "type": "depends_on",
+      "weight": 0.6,
+      "direction": "forward",
+      "description": "commit-msg 钩子依赖 commitlint 规则配置。"
+    },
+    {
+      "id": "edge:triggers:2b63f8a9b9",
+      "source": "file:.husky/pre-commit",
+      "target": "config:package.json",
+      "type": "triggers",
+      "weight": 0.5,
+      "direction": "forward",
+      "description": "pre-commit 钩子触发根包定义的质量检查流程。"
+    }
+  ],
+  "layers": [
+    {
+      "id": "layer:workspace-tooling",
+      "name": "工作区与工具链",
+      "description": "根工作区、代码格式化、Lint、提交规范、TypeScript 和 PostCSS/Tailwind 等工程化配置。",
+      "nodeIds": [
+        "file:.husky/commit-msg",
+        "file:.husky/pre-commit",
+        "config:.prettierrc.json",
+        "config:apps/web/package.json",
+        "file:apps/web/postcss.config.js",
+        "file:apps/web/tailwind.config.ts",
+        "config:apps/web/tsconfig.json",
+        "file:commitlint.config.cjs",
+        "file:eslint.config.js",
+        "config:package.json",
+        "config:pnpm-workspace.yaml",
+        "config:tsconfig.json"
+      ]
+    },
+    {
+      "id": "layer:app-shell",
+      "name": "应用入口与布局",
+      "description": "HTML 宿主、React 挂载入口、App 壳层和全局样式，负责把应用组装到首屏。",
+      "nodeIds": [
+        "file:apps/web/index.html",
+        "file:apps/web/src/App.tsx",
+        "file:apps/web/src/main.tsx",
+        "file:apps/web/src/styles.css"
+      ]
+    },
+    {
+      "id": "layer:calendar-ui",
+      "name": "日历界面组件",
+      "description": "面向用户的日历头部、月网格和单日详情组件。",
+      "nodeIds": [
+        "file:apps/web/src/components/CalendarGrid.tsx",
+        "file:apps/web/src/components/CalendarHeader.tsx",
+        "file:apps/web/src/components/DayDetail.tsx"
+      ]
+    },
+    {
+      "id": "layer:state-and-domain",
+      "name": "状态与领域规则",
+      "description": "Zustand store、日期计算、TODO 可见性/继承规则、节假日标记和领域类型。",
+      "nodeIds": [
+        "file:apps/web/src/lib/date.ts",
+        "file:apps/web/src/lib/holidays.ts",
+        "file:apps/web/src/lib/todos.ts",
+        "file:apps/web/src/store/todoStore.ts",
+        "file:apps/web/src/types/todos.ts"
+      ]
+    },
+    {
+      "id": "layer:local-data-api",
+      "name": "本地数据与开发 API",
+      "description": "开发期 JSON API 和本地持久化数据文件。",
+      "nodeIds": [
+        "config:apps/web/data/todos.json",
+        "file:apps/web/vite.config.ts"
+      ]
+    }
+  ],
+  "tour": [
+    {
+      "order": 1,
+      "title": "从工作区脚本开始",
+      "description": "先看根 package.json 和 pnpm-workspace.yaml，理解这是一个 pnpm monorepo，根脚本会转发到 Web 子应用。",
+      "nodeIds": [
+        "config:package.json",
+        "config:pnpm-workspace.yaml",
+        "config:apps/web/package.json"
+      ],
+      "languageLesson": "注意 package scripts 如何表达项目的真实入口：dev/build/lint/typecheck 都指向 @todo-calender/web。"
+    },
+    {
+      "order": 2,
+      "title": "应用如何启动",
+      "description": "index.html 提供挂载点，main.tsx 挂载 React，App.tsx 负责把月份状态、日历网格和详情面板组合起来。",
+      "nodeIds": [
+        "file:apps/web/index.html",
+        "file:apps/web/src/main.tsx",
+        "file:apps/web/src/App.tsx"
+      ]
+    },
+    {
+      "order": 3,
+      "title": "阅读日历界面",
+      "description": "CalendarHeader 控制月份导航，CalendarGrid 展示整月概览，DayDetail 承担单日 TODO 和实际记录的编辑流程。",
+      "nodeIds": [
+        "file:apps/web/src/components/CalendarHeader.tsx",
+        "file:apps/web/src/components/CalendarGrid.tsx",
+        "file:apps/web/src/components/DayDetail.tsx"
+      ]
+    },
+    {
+      "order": 4,
+      "title": "理解领域规则",
+      "description": "date.ts 负责日期和日历格，todos.ts 负责可见 TODO、完成和继承规则，types/todos.ts 定义共享数据结构。",
+      "nodeIds": [
+        "file:apps/web/src/lib/date.ts",
+        "file:apps/web/src/lib/todos.ts",
+        "file:apps/web/src/types/todos.ts"
+      ]
+    },
+    {
+      "order": 5,
+      "title": "状态与持久化闭环",
+      "description": "todoStore.ts 管理前端状态并调用 /api/todos；vite.config.ts 在开发服务器中实现该 API，并读写 data/todos.json。",
+      "nodeIds": [
+        "file:apps/web/src/store/todoStore.ts",
+        "file:apps/web/vite.config.ts",
+        "config:apps/web/data/todos.json"
+      ]
+    }
+  ]
+}

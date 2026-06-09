@@ -1,0 +1,53 @@
+[
+  {
+    "order": 1,
+    "title": "从工作区脚本开始",
+    "description": "先看根 package.json 和 pnpm-workspace.yaml，理解这是一个 pnpm monorepo，根脚本会转发到 Web 子应用。",
+    "nodeIds": [
+      "config:package.json",
+      "config:pnpm-workspace.yaml",
+      "config:apps/web/package.json"
+    ],
+    "languageLesson": "注意 package scripts 如何表达项目的真实入口：dev/build/lint/typecheck 都指向 @todo-calender/web。"
+  },
+  {
+    "order": 2,
+    "title": "应用如何启动",
+    "description": "index.html 提供挂载点，main.tsx 挂载 React，App.tsx 负责把月份状态、日历网格和详情面板组合起来。",
+    "nodeIds": [
+      "file:apps/web/index.html",
+      "file:apps/web/src/main.tsx",
+      "file:apps/web/src/App.tsx"
+    ]
+  },
+  {
+    "order": 3,
+    "title": "阅读日历界面",
+    "description": "CalendarHeader 控制月份导航，CalendarGrid 展示整月概览，DayDetail 承担单日 TODO 和实际记录的编辑流程。",
+    "nodeIds": [
+      "file:apps/web/src/components/CalendarHeader.tsx",
+      "file:apps/web/src/components/CalendarGrid.tsx",
+      "file:apps/web/src/components/DayDetail.tsx"
+    ]
+  },
+  {
+    "order": 4,
+    "title": "理解领域规则",
+    "description": "date.ts 负责日期和日历格，todos.ts 负责可见 TODO、完成和继承规则，types/todos.ts 定义共享数据结构。",
+    "nodeIds": [
+      "file:apps/web/src/lib/date.ts",
+      "file:apps/web/src/lib/todos.ts",
+      "file:apps/web/src/types/todos.ts"
+    ]
+  },
+  {
+    "order": 5,
+    "title": "状态与持久化闭环",
+    "description": "todoStore.ts 管理前端状态并调用 /api/todos；vite.config.ts 在开发服务器中实现该 API，并读写 data/todos.json。",
+    "nodeIds": [
+      "file:apps/web/src/store/todoStore.ts",
+      "file:apps/web/vite.config.ts",
+      "config:apps/web/data/todos.json"
+    ]
+  }
+]

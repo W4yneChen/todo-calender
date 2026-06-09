@@ -1,0 +1,541 @@
+{
+  "schemaVersion": 1,
+  "algorithm": "louvain",
+  "totalFiles": 26,
+  "totalBatches": 5,
+  "exportsByPath": {
+    ".husky/commit-msg": [],
+    ".husky/pre-commit": [],
+    "apps/web/postcss.config.js": [],
+    "apps/web/src/App.tsx": [
+      "App"
+    ],
+    "apps/web/src/components/CalendarGrid.tsx": [
+      "CalendarGrid"
+    ],
+    "apps/web/src/components/CalendarHeader.tsx": [
+      "CalendarHeader"
+    ],
+    "apps/web/src/components/DayDetail.tsx": [
+      "DayDetail"
+    ],
+    "apps/web/src/lib/date.ts": [
+      "MIN_YEAR",
+      "MIN_MONTH_INDEX",
+      "MIN_MONTH_VALUE",
+      "toDateKey",
+      "createDate",
+      "dateKeyFromParts",
+      "parseDateKey",
+      "monthValue",
+      "parseMonthValue",
+      "isBeforeMinimumMonth",
+      "isBeforeMinimumDate",
+      "addMonths",
+      "addDays",
+      "getMonthLabel",
+      "getWeekdayLabel",
+      "getCalendarDays",
+      "compareDateKeys"
+    ],
+    "apps/web/src/lib/holidays.ts": [
+      "getCalendarMark",
+      "getCalendarMarkClassName",
+      "getCalendarMarkBadgeClassName"
+    ],
+    "apps/web/src/lib/todos.ts": [
+      "createEmptyDay",
+      "ensureDay",
+      "getAllTodos",
+      "getTodoById",
+      "getCompletionDate",
+      "isTodoCompletedAtDate",
+      "getVisibleTodos",
+      "getOpenTodoCount",
+      "getCompletedTodoCount",
+      "makeTodo",
+      "makeActualItem"
+    ],
+    "apps/web/src/main.tsx": [],
+    "apps/web/src/store/todoStore.ts": [
+      "useTodoStore"
+    ],
+    "apps/web/src/types/todos.ts": [],
+    "apps/web/tailwind.config.ts": [],
+    "apps/web/vite.config.ts": [],
+    "commitlint.config.cjs": [],
+    "eslint.config.js": []
+  },
+  "batches": [
+    {
+      "batchIndex": 1,
+      "files": [
+        {
+          "path": "apps/web/src/components/DayDetail.tsx",
+          "language": "typescript",
+          "sizeLines": 313,
+          "fileCategory": "code"
+        },
+        {
+          "path": "apps/web/src/lib/date.ts",
+          "language": "typescript",
+          "sizeLines": 112,
+          "fileCategory": "code"
+        },
+        {
+          "path": "apps/web/src/lib/todos.ts",
+          "language": "typescript",
+          "sizeLines": 101,
+          "fileCategory": "code"
+        },
+        {
+          "path": "apps/web/src/store/todoStore.ts",
+          "language": "typescript",
+          "sizeLines": 321,
+          "fileCategory": "code"
+        },
+        {
+          "path": "apps/web/src/types/todos.ts",
+          "language": "typescript",
+          "sizeLines": 34,
+          "fileCategory": "code"
+        }
+      ],
+      "batchImportData": {
+        "apps/web/src/components/DayDetail.tsx": [
+          "apps/web/src/lib/date.ts",
+          "apps/web/src/lib/todos.ts",
+          "apps/web/src/types/todos.ts"
+        ],
+        "apps/web/src/lib/date.ts": [
+          "apps/web/src/types/todos.ts"
+        ],
+        "apps/web/src/lib/todos.ts": [
+          "apps/web/src/lib/date.ts",
+          "apps/web/src/types/todos.ts"
+        ],
+        "apps/web/src/store/todoStore.ts": [
+          "apps/web/src/lib/date.ts",
+          "apps/web/src/lib/todos.ts",
+          "apps/web/src/types/todos.ts"
+        ],
+        "apps/web/src/types/todos.ts": []
+      },
+      "neighborMap": {
+        "apps/web/src/components/DayDetail.tsx": [
+          {
+            "path": "apps/web/src/App.tsx",
+            "batchIndex": 2,
+            "symbols": [
+              "App"
+            ]
+          }
+        ],
+        "apps/web/src/lib/date.ts": [
+          {
+            "path": "apps/web/src/App.tsx",
+            "batchIndex": 2,
+            "symbols": [
+              "App"
+            ]
+          },
+          {
+            "path": "apps/web/src/components/CalendarGrid.tsx",
+            "batchIndex": 5,
+            "symbols": [
+              "CalendarGrid"
+            ]
+          },
+          {
+            "path": "apps/web/src/components/CalendarHeader.tsx",
+            "batchIndex": 2,
+            "symbols": [
+              "CalendarHeader"
+            ]
+          }
+        ],
+        "apps/web/src/lib/todos.ts": [
+          {
+            "path": "apps/web/src/components/CalendarGrid.tsx",
+            "batchIndex": 5,
+            "symbols": [
+              "CalendarGrid"
+            ]
+          }
+        ],
+        "apps/web/src/store/todoStore.ts": [
+          {
+            "path": "apps/web/src/App.tsx",
+            "batchIndex": 2,
+            "symbols": [
+              "App"
+            ]
+          }
+        ],
+        "apps/web/src/types/todos.ts": [
+          {
+            "path": "apps/web/src/components/CalendarGrid.tsx",
+            "batchIndex": 5,
+            "symbols": [
+              "CalendarGrid"
+            ]
+          },
+          {
+            "path": "apps/web/src/lib/holidays.ts",
+            "batchIndex": 5,
+            "symbols": [
+              "getCalendarMark",
+              "getCalendarMarkClassName",
+              "getCalendarMarkBadgeClassName"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "batchIndex": 2,
+      "files": [
+        {
+          "path": "apps/web/src/App.tsx",
+          "language": "typescript",
+          "sizeLines": 77,
+          "fileCategory": "code"
+        },
+        {
+          "path": "apps/web/src/components/CalendarHeader.tsx",
+          "language": "typescript",
+          "sizeLines": 84,
+          "fileCategory": "code"
+        },
+        {
+          "path": "apps/web/src/main.tsx",
+          "language": "typescript",
+          "sizeLines": 10,
+          "fileCategory": "code"
+        }
+      ],
+      "batchImportData": {
+        "apps/web/src/App.tsx": [
+          "apps/web/src/components/CalendarGrid.tsx",
+          "apps/web/src/components/CalendarHeader.tsx",
+          "apps/web/src/components/DayDetail.tsx",
+          "apps/web/src/lib/date.ts",
+          "apps/web/src/store/todoStore.ts"
+        ],
+        "apps/web/src/components/CalendarHeader.tsx": [
+          "apps/web/src/lib/date.ts"
+        ],
+        "apps/web/src/main.tsx": [
+          "apps/web/src/App.tsx",
+          "apps/web/src/styles.css"
+        ]
+      },
+      "neighborMap": {
+        "apps/web/src/App.tsx": [
+          {
+            "path": "apps/web/src/components/CalendarGrid.tsx",
+            "batchIndex": 5,
+            "symbols": [
+              "CalendarGrid"
+            ]
+          },
+          {
+            "path": "apps/web/src/components/DayDetail.tsx",
+            "batchIndex": 1,
+            "symbols": [
+              "DayDetail"
+            ]
+          },
+          {
+            "path": "apps/web/src/lib/date.ts",
+            "batchIndex": 1,
+            "symbols": [
+              "MIN_YEAR",
+              "MIN_MONTH_INDEX",
+              "MIN_MONTH_VALUE",
+              "toDateKey",
+              "createDate",
+              "dateKeyFromParts",
+              "parseDateKey",
+              "monthValue",
+              "parseMonthValue",
+              "isBeforeMinimumMonth",
+              "isBeforeMinimumDate",
+              "addMonths",
+              "addDays",
+              "getMonthLabel",
+              "getWeekdayLabel",
+              "getCalendarDays",
+              "compareDateKeys"
+            ]
+          },
+          {
+            "path": "apps/web/src/store/todoStore.ts",
+            "batchIndex": 1,
+            "symbols": [
+              "useTodoStore"
+            ]
+          }
+        ],
+        "apps/web/src/components/CalendarHeader.tsx": [
+          {
+            "path": "apps/web/src/lib/date.ts",
+            "batchIndex": 1,
+            "symbols": [
+              "MIN_YEAR",
+              "MIN_MONTH_INDEX",
+              "MIN_MONTH_VALUE",
+              "toDateKey",
+              "createDate",
+              "dateKeyFromParts",
+              "parseDateKey",
+              "monthValue",
+              "parseMonthValue",
+              "isBeforeMinimumMonth",
+              "isBeforeMinimumDate",
+              "addMonths",
+              "addDays",
+              "getMonthLabel",
+              "getWeekdayLabel",
+              "getCalendarDays",
+              "compareDateKeys"
+            ]
+          }
+        ],
+        "apps/web/src/main.tsx": [
+          {
+            "path": "apps/web/src/styles.css",
+            "batchIndex": 5,
+            "symbols": []
+          }
+        ]
+      }
+    },
+    {
+      "batchIndex": 3,
+      "files": [
+        {
+          "path": ".prettierrc.json",
+          "language": "json",
+          "sizeLines": 6,
+          "fileCategory": "config"
+        },
+        {
+          "path": "package.json",
+          "language": "json",
+          "sizeLines": 29,
+          "fileCategory": "config"
+        },
+        {
+          "path": "pnpm-workspace.yaml",
+          "language": "yaml",
+          "sizeLines": 6,
+          "fileCategory": "config"
+        },
+        {
+          "path": "tsconfig.json",
+          "language": "json",
+          "sizeLines": 4,
+          "fileCategory": "config"
+        }
+      ],
+      "batchImportData": {
+        ".prettierrc.json": [],
+        "package.json": [],
+        "pnpm-workspace.yaml": [],
+        "tsconfig.json": []
+      },
+      "neighborMap": {}
+    },
+    {
+      "batchIndex": 4,
+      "files": [
+        {
+          "path": "apps/web/index.html",
+          "language": "html",
+          "sizeLines": 12,
+          "fileCategory": "markup"
+        },
+        {
+          "path": "apps/web/package.json",
+          "language": "json",
+          "sizeLines": 30,
+          "fileCategory": "config"
+        },
+        {
+          "path": "apps/web/tsconfig.json",
+          "language": "json",
+          "sizeLines": 22,
+          "fileCategory": "config"
+        }
+      ],
+      "batchImportData": {
+        "apps/web/index.html": [],
+        "apps/web/package.json": [],
+        "apps/web/tsconfig.json": []
+      },
+      "neighborMap": {}
+    },
+    {
+      "batchIndex": 5,
+      "files": [
+        {
+          "path": ".husky/commit-msg",
+          "language": "unknown",
+          "sizeLines": 1,
+          "fileCategory": "code"
+        },
+        {
+          "path": ".husky/pre-commit",
+          "language": "unknown",
+          "sizeLines": 1,
+          "fileCategory": "code"
+        },
+        {
+          "path": "apps/web/data/todos.json",
+          "language": "json",
+          "sizeLines": 118,
+          "fileCategory": "config"
+        },
+        {
+          "path": "apps/web/postcss.config.js",
+          "language": "javascript",
+          "sizeLines": 6,
+          "fileCategory": "code"
+        },
+        {
+          "path": "apps/web/src/components/CalendarGrid.tsx",
+          "language": "typescript",
+          "sizeLines": 140,
+          "fileCategory": "code"
+        },
+        {
+          "path": "apps/web/src/lib/holidays.ts",
+          "language": "typescript",
+          "sizeLines": 62,
+          "fileCategory": "code"
+        },
+        {
+          "path": "apps/web/src/styles.css",
+          "language": "css",
+          "sizeLines": 65,
+          "fileCategory": "markup"
+        },
+        {
+          "path": "apps/web/tailwind.config.ts",
+          "language": "typescript",
+          "sizeLines": 24,
+          "fileCategory": "code"
+        },
+        {
+          "path": "apps/web/vite.config.ts",
+          "language": "typescript",
+          "sizeLines": 76,
+          "fileCategory": "code"
+        },
+        {
+          "path": "commitlint.config.cjs",
+          "language": "javascript",
+          "sizeLines": 3,
+          "fileCategory": "code"
+        },
+        {
+          "path": "eslint.config.js",
+          "language": "javascript",
+          "sizeLines": 22,
+          "fileCategory": "code"
+        }
+      ],
+      "batchImportData": {
+        ".husky/commit-msg": [],
+        ".husky/pre-commit": [],
+        "apps/web/data/todos.json": [],
+        "apps/web/postcss.config.js": [],
+        "apps/web/src/components/CalendarGrid.tsx": [
+          "apps/web/src/lib/date.ts",
+          "apps/web/src/lib/holidays.ts",
+          "apps/web/src/lib/todos.ts",
+          "apps/web/src/types/todos.ts"
+        ],
+        "apps/web/src/lib/holidays.ts": [
+          "apps/web/src/types/todos.ts"
+        ],
+        "apps/web/src/styles.css": [],
+        "apps/web/tailwind.config.ts": [],
+        "apps/web/vite.config.ts": [],
+        "commitlint.config.cjs": [],
+        "eslint.config.js": []
+      },
+      "neighborMap": {
+        "apps/web/src/components/CalendarGrid.tsx": [
+          {
+            "path": "apps/web/src/lib/date.ts",
+            "batchIndex": 1,
+            "symbols": [
+              "MIN_YEAR",
+              "MIN_MONTH_INDEX",
+              "MIN_MONTH_VALUE",
+              "toDateKey",
+              "createDate",
+              "dateKeyFromParts",
+              "parseDateKey",
+              "monthValue",
+              "parseMonthValue",
+              "isBeforeMinimumMonth",
+              "isBeforeMinimumDate",
+              "addMonths",
+              "addDays",
+              "getMonthLabel",
+              "getWeekdayLabel",
+              "getCalendarDays",
+              "compareDateKeys"
+            ]
+          },
+          {
+            "path": "apps/web/src/lib/todos.ts",
+            "batchIndex": 1,
+            "symbols": [
+              "createEmptyDay",
+              "ensureDay",
+              "getAllTodos",
+              "getTodoById",
+              "getCompletionDate",
+              "isTodoCompletedAtDate",
+              "getVisibleTodos",
+              "getOpenTodoCount",
+              "getCompletedTodoCount",
+              "makeTodo",
+              "makeActualItem"
+            ]
+          },
+          {
+            "path": "apps/web/src/types/todos.ts",
+            "batchIndex": 1,
+            "symbols": []
+          },
+          {
+            "path": "apps/web/src/App.tsx",
+            "batchIndex": 2,
+            "symbols": [
+              "App"
+            ]
+          }
+        ],
+        "apps/web/src/lib/holidays.ts": [
+          {
+            "path": "apps/web/src/types/todos.ts",
+            "batchIndex": 1,
+            "symbols": []
+          }
+        ],
+        "apps/web/src/styles.css": [
+          {
+            "path": "apps/web/src/main.tsx",
+            "batchIndex": 2,
+            "symbols": []
+          }
+        ]
+      }
+    }
+  ]
+}

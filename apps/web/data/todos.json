@@ -113,6 +113,45 @@
       ],
       "completedTodoIds": [],
       "actualItems": []
+    },
+    "2026-06-09": {
+      "todos": [],
+      "inheritedTodoIds": [],
+      "completedTodoIds": [],
+      "actualItems": [
+        {
+          "id": "dcd7e238-8e37-451b-abce-a9b25aec37d8",
+          "text": "研究 lark-cli 读取带图片的产品文档",
+          "createdAt": "2026-06-09T04:00:00.000Z"
+        },
+        {
+          "id": "bdeda97e-6379-4809-9c24-e55e873a11ab",
+          "text": "跑 benchmark",
+          "createdAt": "2026-06-09T04:00:00.000Z"
+        },
+        {
+          "id": "e6fd93a4-6459-4943-bda5-4094d4ed2d7c",
+          "text": "分析 benchmark 结果",
+          "createdAt": "2026-06-09T04:00:00.000Z"
+        }
+      ]
+    },
+    "2026-06-08": {
+      "todos": [],
+      "inheritedTodoIds": [],
+      "completedTodoIds": [],
+      "actualItems": [
+        {
+          "id": "b2745403-fa6d-42f7-9648-14d2c74ab555",
+          "text": "整理 benchmark 需求及文档",
+          "createdAt": "2026-06-08T04:00:00.000Z"
+        },
+        {
+          "id": "729be2af-7955-4569-b0ef-dea47161fc8d",
+          "text": "跑 benchmark",
+          "createdAt": "2026-06-08T04:00:00.000Z"
+        }
+      ]
     }
   }
 }

@@ -1,5 +1,14 @@
 import { create } from 'zustand';
-import { addDays, compareDateKeys, dateKeyFromParts, MIN_MONTH_INDEX, MIN_YEAR } from '../lib/date';
+import {
+  addDays,
+  compareDateKeys,
+  dateKeyFromParts,
+  isBeforeMinimumMonth,
+  MIN_MONTH_INDEX,
+  MIN_YEAR,
+  parseDateKey,
+  toDateKey,
+} from '../lib/date';
 import { ensureDay, isTodoCompletedAtDate, makeActualItem, makeTodo } from '../lib/todos';
 import type { DateKey, SaveStatus, TodoCalendarData } from '../types/todos';
 
@@ -23,7 +32,12 @@ interface TodoStore {
   deleteActualItem: (itemId: string) => void;
 }
 
-const initialSelectedDate = dateKeyFromParts(MIN_YEAR, MIN_MONTH_INDEX, 1);
+const today = new Date();
+const initialSelectedDate = isBeforeMinimumMonth(today.getFullYear(), today.getMonth())
+  ? dateKeyFromParts(MIN_YEAR, MIN_MONTH_INDEX, 1)
+  : toDateKey(today);
+const { year: initialVisibleYear, monthIndex: initialVisibleMonthIndex } =
+  parseDateKey(initialSelectedDate);
 const initialData: TodoCalendarData = {
   version: 2,
   days: {},
@@ -144,8 +158,8 @@ export const useTodoStore = create<TodoStore>((set, get) => {
   return {
     data: initialData,
     selectedDate: initialSelectedDate,
-    visibleYear: MIN_YEAR,
-    visibleMonthIndex: MIN_MONTH_INDEX,
+    visibleYear: initialVisibleYear,
+    visibleMonthIndex: initialVisibleMonthIndex,
     saveStatus: 'idle',
     errorMessage: '',
     load: async () => {

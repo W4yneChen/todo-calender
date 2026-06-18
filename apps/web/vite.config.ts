@@ -73,4 +73,8 @@ function todoJsonApi(): Plugin {
 
 export default defineConfig({
   plugins: [react(), todoJsonApi()],
+  server: {
+    port: 4173,
+    strictPort: true,
+  },
 });

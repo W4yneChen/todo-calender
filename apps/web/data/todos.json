@@ -651,6 +651,53 @@
           "createdAt": "2026-06-15T04:00:00.000Z"
         }
       ]
+    },
+    "2026-06-16": {
+      "todos": [],
+      "inheritedTodoIds": [],
+      "completedTodoIds": [],
+      "actualItems": [
+        {
+          "id": "aad43f9f-3b7f-46d3-a825-70113b412e55",
+          "text": "设计并生成 benchmark skill",
+          "createdAt": "2026-06-16T04:00:00.000Z"
+        },
+        {
+          "id": "0e65389f-41b9-41ff-a253-9407b7d66f00",
+          "text": "规范化 benchmark skill",
+          "createdAt": "2026-06-16T04:00:00.000Z"
+        }
+      ]
+    },
+    "2026-06-17": {
+      "todos": [],
+      "inheritedTodoIds": [],
+      "completedTodoIds": [],
+      "actualItems": [
+        {
+          "id": "5164da6e-c5db-4348-afee-bb3425855808",
+          "text": "实际测试 benchmark skill",
+          "createdAt": "2026-06-17T04:00:00.000Z"
+        }
+      ]
+    },
+    "2026-06-18": {
+      "todos": [
+        {
+          "id": "74b84dcc-ab01-41c3-bd4f-7c6da6c8a634",
+          "text": "实打实",
+          "createdAt": "2026-06-18T04:00:00.000Z"
+        }
+      ],
+      "inheritedTodoIds": [],
+      "completedTodoIds": [],
+      "actualItems": [
+        {
+          "id": "b9a26103-2659-4505-8877-65103047d087",
+          "text": "实际测试 benchmark skill",
+          "createdAt": "2026-06-18T04:00:00.000Z"
+        }
+      ]
     }
   }
 }

@@ -1,4 +1,4 @@
-import { FormEvent, useState } from 'react';
+import { FormEvent, KeyboardEvent, useEffect, useState } from 'react';
 import { addDays, getMonthLabel, getWeekdayLabel, parseDateKey } from '../lib/date';
 import { ensureDay, getVisibleTodos } from '../lib/todos';
 import type { ActualItem, DateKey, SaveStatus, TodoCalendarData, VisibleTodo } from '../types/todos';
@@ -25,6 +25,53 @@ const saveStatusText: Record<SaveStatus, string> = {
   saved: '已保存',
   error: '保存失败',
 };
+
+interface TextEditorProps {
+  text: string;
+  onCommit: (text: string) => void;
+  className?: string;
+}
+
+function TextEditor({ text, onCommit, className = '' }: TextEditorProps) {
+  const [draft, setDraft] = useState(text);
+
+  useEffect(() => {
+    setDraft(text);
+  }, [text]);
+
+  const commitDraft = () => {
+    if (draft !== text) {
+      onCommit(draft);
+    }
+  };
+
+  const handleKeyDown = (event: KeyboardEvent<HTMLInputElement>) => {
+    if (event.key === 'Enter') {
+      event.preventDefault();
+      commitDraft();
+      event.currentTarget.blur();
+      return;
+    }
+
+    if (event.key === 'Escape') {
+      setDraft(text);
+      event.currentTarget.blur();
+    }
+  };
+
+  return (
+    <input
+      value={draft}
+      onChange={(event) => setDraft(event.target.value)}
+      onBlur={commitDraft}
+      onKeyDown={handleKeyDown}
+      className={[
+        'min-w-0 flex-1 rounded-2xl bg-transparent px-1 py-0.5 text-sm font-semibold text-slate-900 outline-none transition hover:bg-slate-50 focus:bg-blue-50/60 focus:ring-4 focus:ring-blue-100',
+        className,
+      ].join(' ')}
+    />
+  );
+}
 
 export function DayDetail({
   data,
@@ -82,17 +129,16 @@ export function DayDetail({
 
   const renderTextEditor = (kind: 'todo' | 'actual', id: string, text: string) => {
     return (
-      <input
-        value={text}
-        onChange={(event) => {
+      <TextEditor
+        text={text}
+        onCommit={(nextText) => {
           if (kind === 'todo') {
-            onUpdateTodo(id, event.target.value);
+            onUpdateTodo(id, nextText);
             return;
           }
 
-          onUpdateActualItem(id, event.target.value);
+          onUpdateActualItem(id, nextText);
         }}
-        className="min-w-0 flex-1 rounded-2xl bg-transparent px-1 py-0.5 text-sm font-semibold text-slate-900 outline-none transition hover:bg-slate-50 focus:bg-blue-50/60 focus:ring-4 focus:ring-blue-100"
       />
     );
   };

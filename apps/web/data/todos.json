@@ -5,7 +5,7 @@
       "todos": [
         {
           "id": "94c13950-5e7c-4cf0-a2e2-46abaff02940",
-          "text": "初始化 skill",
+          "text": "沉淀上周 POC 流程并初始化 skill",
           "createdAt": "2026-05-25T04:00:00.000Z"
         },
         {
@@ -86,13 +86,15 @@
     "2026-05-28": {
       "todos": [
         {
-          "id": "10d5ea0c-35be-4261-a916-f03606955c29",
+          "id": "a04600ef-a0d3-4b7b-b573-7683fb154e71",
           "text": "规范 Card 结构和内容",
           "createdAt": "2026-05-28T04:00:00.000Z"
         }
       ],
       "inheritedTodoIds": [],
-      "completedTodoIds": [],
+      "completedTodoIds": [
+        "a04600ef-a0d3-4b7b-b573-7683fb154e71"
+      ],
       "actualItems": [
         {
           "id": "88123fb2-4dff-4a0f-925d-b6ea6667b40e",
@@ -101,17 +103,23 @@
         },
         {
           "id": "b04b7007-00c9-4e73-8459-bbe209b7f377",
-          "text": "参加双周会",
+          "text": "双周会",
           "createdAt": "2026-05-28T04:00:00.000Z"
         }
       ]
     },
     "2026-05-29": {
-      "todos": [],
-      "inheritedTodoIds": [
-        "10d5ea0c-35be-4261-a916-f03606955c29"
+      "todos": [
+        {
+          "id": "836e88e5-b5ec-45f8-8dd0-e10eea6bde6a",
+          "text": "规范 Card 结构和内容",
+          "createdAt": "2026-05-29T04:00:00.000Z"
+        }
       ],
-      "completedTodoIds": [],
+      "inheritedTodoIds": [],
+      "completedTodoIds": [
+        "836e88e5-b5ec-45f8-8dd0-e10eea6bde6a"
+      ],
       "actualItems": []
     },
     "2026-06-09": {
@@ -126,7 +134,7 @@
         },
         {
           "id": "bdeda97e-6379-4809-9c24-e55e873a11ab",
-          "text": "跑 benchmark",
+          "text": "完整跑完一轮 benchmark，输出初版结果",
           "createdAt": "2026-06-09T04:00:00.000Z"
         },
         {
@@ -143,13 +151,504 @@
       "actualItems": [
         {
           "id": "b2745403-fa6d-42f7-9648-14d2c74ab555",
-          "text": "整理 benchmark 需求及文档",
+          "text": "设计 AI 影响面分析 benchmark 流程，确定 5 个实验组的对比方式",
           "createdAt": "2026-06-08T04:00:00.000Z"
         },
         {
           "id": "729be2af-7955-4569-b0ef-dea47161fc8d",
-          "text": "跑 benchmark",
+          "text": "整理 benchmark 的需求样本& commit 记录",
           "createdAt": "2026-06-08T04:00:00.000Z"
+        },
+        {
+          "id": "d2ed1875-f381-46db-b2b5-0dadd322d782",
+          "text": "跑部分 benchmark",
+          "createdAt": "2026-06-08T04:00:00.000Z"
+        }
+      ]
+    },
+    "2026-06-10": {
+      "todos": [],
+      "inheritedTodoIds": [],
+      "completedTodoIds": [],
+      "actualItems": [
+        {
+          "id": "f78160a3-5cfd-41dd-b9d6-3d5cdb01fa47",
+          "text": "深入学习研究 Understand Anything",
+          "createdAt": "2026-06-10T04:00:00.000Z"
+        },
+        {
+          "id": "08695412-7d19-40e1-846f-fb684f96c6b7",
+          "text": "准备分享文档",
+          "createdAt": "2026-06-10T04:00:00.000Z"
+        }
+      ]
+    },
+    "2026-06-11": {
+      "todos": [],
+      "inheritedTodoIds": [],
+      "completedTodoIds": [],
+      "actualItems": [
+        {
+          "id": "8c784b89-c07b-45d5-b049-180ba1a91f7a",
+          "text": "修改 benchmark 流程，跑第二轮 benchmark",
+          "createdAt": "2026-06-11T04:00:00.000Z"
+        },
+        {
+          "id": "6a13e37e-fb0b-4556-ae93-4ca9bafeae7f",
+          "text": "优化分享文档",
+          "createdAt": "2026-06-11T04:00:00.000Z"
+        }
+      ]
+    },
+    "2026-06-12": {
+      "todos": [],
+      "inheritedTodoIds": [],
+      "completedTodoIds": [],
+      "actualItems": [
+        {
+          "id": "350dbd93-1e4f-4adc-a0e7-13ff5ba3e279",
+          "text": "优化分享文档",
+          "createdAt": "2026-06-12T04:00:00.000Z"
+        },
+        {
+          "id": "53e6cd42-96be-4e8e-9e74-d43251850f37",
+          "text": "双周会&进行技术分享",
+          "createdAt": "2026-06-12T04:00:00.000Z"
+        }
+      ]
+    },
+    "2026-05-06": {
+      "todos": [],
+      "inheritedTodoIds": [],
+      "completedTodoIds": [],
+      "actualItems": [
+        {
+          "id": "75116377-d18e-4abb-ad15-7d77e36a6ecd",
+          "text": "入职",
+          "createdAt": "2026-05-06T04:00:00.000Z"
+        },
+        {
+          "id": "f156425f-ed1a-4c8c-a40a-a8a3734caebc",
+          "text": "安装环境&运行代码",
+          "createdAt": "2026-05-06T04:00:00.000Z"
+        },
+        {
+          "id": "76f349ec-fd8d-423c-b5dd-6fc97f844774",
+          "text": "熟悉内部工具&流程",
+          "createdAt": "2026-05-06T04:00:00.000Z"
+        }
+      ]
+    },
+    "2026-05-07": {
+      "todos": [],
+      "inheritedTodoIds": [],
+      "completedTodoIds": [],
+      "actualItems": [
+        {
+          "id": "6863c20d-56cc-4a24-9d15-045528ae6125",
+          "text": "阅读 VC 用户手册",
+          "createdAt": "2026-05-07T04:00:00.000Z"
+        },
+        {
+          "id": "0d110007-5a87-4925-9e3b-0555512f4e9f",
+          "text": "熟悉 VC 功能",
+          "createdAt": "2026-05-07T04:00:00.000Z"
+        },
+        {
+          "id": "56b193a5-ba53-4b3f-bbc5-16c38c7d5165",
+          "text": "1v1 入职沟通",
+          "createdAt": "2026-05-07T04:00:00.000Z"
+        },
+        {
+          "id": "4e8dd2cc-3c30-40ed-9053-d119b28351e1",
+          "text": "熟悉 VC 项目代码",
+          "createdAt": "2026-05-07T04:00:00.000Z"
+        }
+      ]
+    },
+    "2026-05-08": {
+      "todos": [],
+      "inheritedTodoIds": [],
+      "completedTodoIds": [],
+      "actualItems": [
+        {
+          "id": "b088e6d3-7ef2-454f-96aa-cf03498eba5b",
+          "text": "观看入职培训视频",
+          "createdAt": "2026-05-08T04:00:00.000Z"
+        },
+        {
+          "id": "dd5fa1b0-3ba3-4809-a973-341bbbd33a9b",
+          "text": "双周会",
+          "createdAt": "2026-05-08T04:00:00.000Z"
+        },
+        {
+          "id": "74558eeb-ae69-4c69-b3e5-ad219b18fa56",
+          "text": "AI 生成项目路由架构",
+          "createdAt": "2026-05-08T04:00:00.000Z"
+        }
+      ]
+    },
+    "2026-05-09": {
+      "todos": [],
+      "inheritedTodoIds": [],
+      "completedTodoIds": [],
+      "actualItems": [
+        {
+          "id": "7b37e4bf-cfd7-4be3-a902-51df1d125d45",
+          "text": "安装 WSL",
+          "createdAt": "2026-05-09T04:00:00.000Z"
+        },
+        {
+          "id": "474b7c2a-deab-4c1f-a121-5d73629c6dc9",
+          "text": "熟悉项目代码",
+          "createdAt": "2026-05-09T04:00:00.000Z"
+        },
+        {
+          "id": "0511df73-0ee2-4779-a69c-ae125039b88d",
+          "text": "国际化翻译——需求评审&运行代码",
+          "createdAt": "2026-05-09T04:00:00.000Z"
+        }
+      ]
+    },
+    "2026-05-11": {
+      "todos": [],
+      "inheritedTodoIds": [],
+      "completedTodoIds": [],
+      "actualItems": [
+        {
+          "id": "8567d00c-c703-46b9-9f4f-5b86a995dc62",
+          "text": "通过 VC 新手指引学习平台主流程",
+          "createdAt": "2026-05-11T04:00:00.000Z"
+        },
+        {
+          "id": "05de6024-7ad1-4be8-9303-616348260543",
+          "text": "解决 Cursor Agent 无法加载 WSL 插件导致网络超时的问题",
+          "createdAt": "2026-05-11T04:00:00.000Z"
+        },
+        {
+          "id": "5581365c-fa71-499c-996a-089c0782f050",
+          "text": "研究 skills 管理",
+          "createdAt": "2026-05-11T04:00:00.000Z"
+        },
+        {
+          "id": "d16c6427-0148-42fa-91ad-a22bf5fc4c66",
+          "text": "生成并审阅项目架构文档",
+          "createdAt": "2026-05-11T04:00:00.000Z"
+        },
+        {
+          "id": "267ec6e2-19b6-4f15-8605-1935551b1f7e",
+          "text": "阅读 translate 相关代码",
+          "createdAt": "2026-05-11T04:00:00.000Z"
+        },
+        {
+          "id": "dd2a0136-b3f7-4e11-9744-d87ea118d6f1",
+          "text": "观看入职培训视频",
+          "createdAt": "2026-05-11T04:00:00.000Z"
+        }
+      ]
+    },
+    "2026-05-12": {
+      "todos": [],
+      "inheritedTodoIds": [],
+      "completedTodoIds": [],
+      "actualItems": [
+        {
+          "id": "65d40951-d898-4919-aedb-069ac75c2171",
+          "text": "生成并审阅项目解析文档",
+          "createdAt": "2026-05-12T04:00:00.000Z"
+        },
+        {
+          "id": "0711256c-2429-4463-a430-8343fa5cdbf4",
+          "text": "阅读 transitionWord 相关代码",
+          "createdAt": "2026-05-12T04:00:00.000Z"
+        },
+        {
+          "id": "b13fe216-29a9-4cc0-a656-5b09dae925c2",
+          "text": "阅读 深度视觉算法.docx 熟悉平台主流程",
+          "createdAt": "2026-05-12T04:00:00.000Z"
+        },
+        {
+          "id": "382d0578-4707-4bfd-8f17-473cd51be8b4",
+          "text": "组内分享会",
+          "createdAt": "2026-05-12T04:00:00.000Z"
+        }
+      ]
+    },
+    "2026-05-13": {
+      "todos": [],
+      "inheritedTodoIds": [],
+      "completedTodoIds": [],
+      "actualItems": [
+        {
+          "id": "f5b155de-4e9a-4f6f-be56-d7b5b31fa8e7",
+          "text": "跟 ld 对齐项目熟悉进度&产出（项目架构文档、项目解析文档）",
+          "createdAt": "2026-05-13T04:00:00.000Z"
+        },
+        {
+          "id": "3bb8c638-3770-46b3-8f69-499d5c8388f7",
+          "text": "阅读 Knowledge Index 建设方案",
+          "createdAt": "2026-05-13T04:00:00.000Z"
+        },
+        {
+          "id": "feb62165-e365-47fc-bd8a-7d11b7f5b32d",
+          "text": "ChatGPT——CC、Codex 等 Agent 差异",
+          "createdAt": "2026-05-13T04:00:00.000Z"
+        },
+        {
+          "id": "afef2884-7abf-4fad-8514-a29789f27736",
+          "text": "ChatGPT——Browser use 和 Playwright 差异",
+          "createdAt": "2026-05-13T04:00:00.000Z"
+        },
+        {
+          "id": "2fb124c6-c272-49a7-a5f5-fbf2b82f2022",
+          "text": "收听 AI 工具最佳实践分享",
+          "createdAt": "2026-05-13T04:00:00.000Z"
+        }
+      ]
+    },
+    "2026-05-14": {
+      "todos": [],
+      "inheritedTodoIds": [],
+      "completedTodoIds": [],
+      "actualItems": [
+        {
+          "id": "63575583-ceee-4a33-a988-a4f717c4d792",
+          "text": "和 AI 讨论 Knowledge Index 执行方案",
+          "createdAt": "2026-05-14T04:00:00.000Z"
+        }
+      ]
+    },
+    "2026-05-15": {
+      "todos": [],
+      "inheritedTodoIds": [],
+      "completedTodoIds": [],
+      "actualItems": [
+        {
+          "id": "a9e7aa6f-138c-45b3-a8cd-220d7ec88640",
+          "text": "对齐 Knowledge Index 执行方案",
+          "createdAt": "2026-05-15T04:00:00.000Z"
+        },
+        {
+          "id": "f156c44d-7a8a-4bdc-a3ea-def490812f06",
+          "text": "初步建设 Knowledge Index",
+          "createdAt": "2026-05-15T04:00:00.000Z"
+        }
+      ]
+    },
+    "2026-05-18": {
+      "todos": [],
+      "inheritedTodoIds": [],
+      "completedTodoIds": [],
+      "actualItems": [
+        {
+          "id": "72051861-ef1d-4590-833d-b9e38231fa62",
+          "text": "生成 Knowledge Index 最终执行方案",
+          "createdAt": "2026-05-18T04:00:00.000Z"
+        },
+        {
+          "id": "75ee5f11-b991-474c-819e-4e737cb4dfe0",
+          "text": "生成 POC 执行方案",
+          "createdAt": "2026-05-18T04:00:00.000Z"
+        }
+      ]
+    },
+    "2026-05-19": {
+      "todos": [],
+      "inheritedTodoIds": [],
+      "completedTodoIds": [],
+      "actualItems": [
+        {
+          "id": "cebacdc0-4374-46bc-bc79-a4bc1a6dd4e2",
+          "text": "Cursor 进行 Knowledge Index 基建",
+          "createdAt": "2026-05-19T04:00:00.000Z"
+        },
+        {
+          "id": "9c34608c-8700-4b0d-8c4f-3e62e02cef5a",
+          "text": "安装 Browser Use 和 Playwright",
+          "createdAt": "2026-05-19T04:00:00.000Z"
+        },
+        {
+          "id": "c3f6fb04-1180-4b17-935c-ff28008b26ea",
+          "text": "安装配置 Codex",
+          "createdAt": "2026-05-19T04:00:00.000Z"
+        }
+      ]
+    },
+    "2026-05-20": {
+      "todos": [],
+      "inheritedTodoIds": [],
+      "completedTodoIds": [],
+      "actualItems": [
+        {
+          "id": "06968a37-2c90-480d-9c9e-81ff0b095ca5",
+          "text": "通过 Codex 进行 POC 一期",
+          "createdAt": "2026-05-20T04:00:00.000Z"
+        },
+        {
+          "id": "7abd9720-4e5e-480f-bd23-6c5cfd09f2fa",
+          "text": "通过 Playwright 探索功能入口",
+          "createdAt": "2026-05-20T04:00:00.000Z"
+        },
+        {
+          "id": "dd5ae184-889b-41ae-9e3c-6c0ffb1e46e0",
+          "text": "从 Vimo Cloud 代码反推3种卡片",
+          "createdAt": "2026-05-20T04:00:00.000Z"
+        }
+      ]
+    },
+    "2026-05-21": {
+      "todos": [],
+      "inheritedTodoIds": [],
+      "completedTodoIds": [],
+      "actualItems": [
+        {
+          "id": "f3efd55f-a2ac-4f4a-a3d6-7f6b0f7d7341",
+          "text": "通过 Browser Use 探索功能入口",
+          "createdAt": "2026-05-21T04:00:00.000Z"
+        },
+        {
+          "id": "e23c89f8-fda6-4da3-acb9-abbd9b3ee898",
+          "text": "执行 POC 完整流程，生成初版 POC 结果",
+          "createdAt": "2026-05-21T04:00:00.000Z"
+        }
+      ]
+    },
+    "2026-05-22": {
+      "todos": [],
+      "inheritedTodoIds": [],
+      "completedTodoIds": [],
+      "actualItems": [
+        {
+          "id": "ac740784-5b14-4583-8ef0-78ba06d79e7e",
+          "text": "收听 VimoX 分享会",
+          "createdAt": "2026-05-22T04:00:00.000Z"
+        },
+        {
+          "id": "bea67257-24a5-41f5-a03c-03968585e55b",
+          "text": "Knowledge Index 项目进度汇报&对齐",
+          "createdAt": "2026-05-22T04:00:00.000Z"
+        },
+        {
+          "id": "550d72dd-3918-41ef-a1f1-060842a67775",
+          "text": "人工审阅 POC 结果",
+          "createdAt": "2026-05-22T04:00:00.000Z"
+        }
+      ]
+    },
+    "2026-06-01": {
+      "todos": [],
+      "inheritedTodoIds": [],
+      "completedTodoIds": [],
+      "actualItems": [
+        {
+          "id": "90659df0-9361-495c-899d-d83c7df18031",
+          "text": "跑通 skill 从代码反推卡片流程",
+          "createdAt": "2026-06-01T04:00:00.000Z"
+        },
+        {
+          "id": "229af909-d601-471b-8ee8-92b5c85116ec",
+          "text": "增加 skill 规范和约束",
+          "createdAt": "2026-06-01T04:00:00.000Z"
+        }
+      ]
+    },
+    "2026-06-02": {
+      "todos": [],
+      "inheritedTodoIds": [],
+      "completedTodoIds": [],
+      "actualItems": [
+        {
+          "id": "1d0f30b8-6f34-45b0-9998-d51312f81a2e",
+          "text": "病假",
+          "createdAt": "2026-06-02T04:00:00.000Z"
+        }
+      ]
+    },
+    "2026-06-03": {
+      "todos": [],
+      "inheritedTodoIds": [],
+      "completedTodoIds": [],
+      "actualItems": [
+        {
+          "id": "53e8367f-a1d9-4c39-b813-d0cca87364c0",
+          "text": "跑通 Runtime Observer 流程",
+          "createdAt": "2026-06-03T04:00:00.000Z"
+        },
+        {
+          "id": "f5570652-b3a2-4af9-a556-2959ac1c7281",
+          "text": "拆分 SKILL 和 AGENTS 到 reference/",
+          "createdAt": "2026-06-03T04:00:00.000Z"
+        }
+      ]
+    },
+    "2026-06-04": {
+      "todos": [],
+      "inheritedTodoIds": [],
+      "completedTodoIds": [],
+      "actualItems": [
+        {
+          "id": "b6ff864c-4394-4ca6-a497-add6f3038bf4",
+          "text": "探索和跑通 Runtime Observer 新流程",
+          "createdAt": "2026-06-04T04:00:00.000Z"
+        },
+        {
+          "id": "45ed5f97-f8c4-43f9-9b1f-9f376ccafcf4",
+          "text": "Browser Use 探索并生成操作路径",
+          "createdAt": "2026-06-04T04:00:00.000Z"
+        },
+        {
+          "id": "0546b41c-6cf1-4892-9f23-f4c27a2381d0",
+          "text": "Codex 评估操作路径",
+          "createdAt": "2026-06-04T04:00:00.000Z"
+        },
+        {
+          "id": "46b4ed0c-e87d-43a8-81e2-14072f20184d",
+          "text": "Playwright 复跑路径、截图并生成复跑脚本",
+          "createdAt": "2026-06-04T04:00:00.000Z"
+        }
+      ]
+    },
+    "2026-06-05": {
+      "todos": [],
+      "inheritedTodoIds": [],
+      "completedTodoIds": [],
+      "actualItems": [
+        {
+          "id": "e30b414d-44ba-462f-a5e4-0c78cb56a47c",
+          "text": "进行 Understand Anything Benchmark",
+          "createdAt": "2026-06-05T04:00:00.000Z"
+        },
+        {
+          "id": "788dcca2-e149-458e-be02-985a29112cd3",
+          "text": "Knowledge Index 项目进度汇报&对齐",
+          "createdAt": "2026-06-05T04:00:00.000Z"
+        },
+        {
+          "id": "28bc4a30-7780-4576-81e9-1d0ee994a3ca",
+          "text": "准备下周 Benchmark 材料",
+          "createdAt": "2026-06-05T04:00:00.000Z"
+        }
+      ]
+    },
+    "2026-06-15": {
+      "todos": [],
+      "inheritedTodoIds": [],
+      "completedTodoIds": [],
+      "actualItems": [
+        {
+          "id": "99a87434-d259-4451-9716-c30d990e143c",
+          "text": "复盘影响面分析 Benchmark",
+          "createdAt": "2026-06-15T04:00:00.000Z"
+        },
+        {
+          "id": "32eb0b73-c0f2-4ee3-a92c-2c777c0ef65a",
+          "text": "Knowledge Index 项目进度汇报&对齐",
+          "createdAt": "2026-06-15T04:00:00.000Z"
+        },
+        {
+          "id": "bd97f338-2c2c-4365-a678-b4730b19c18d",
+          "text": "学习 Git Squash、CI/CD、TDD skill 选型",
+          "createdAt": "2026-06-15T04:00:00.000Z"
         }
       ]
     }

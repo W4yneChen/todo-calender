@@ -9,8 +9,9 @@ import {
   parseDateKey,
   toDateKey,
 } from '../lib/date';
+import { isLeavePeriod } from '../lib/leave';
 import { ensureDay, isTodoCompletedAtDate, makeActualItem, makeTodo } from '../lib/todos';
-import type { DateKey, SaveStatus, TodoCalendarData } from '../types/todos';
+import type { DateKey, LeaveConfig, SaveStatus, TodoCalendarData } from '../types/todos';
 
 interface TodoStore {
   data: TodoCalendarData;
@@ -30,6 +31,7 @@ interface TodoStore {
   addActualItem: (dateKey: DateKey, text: string) => void;
   updateActualItem: (itemId: string, text: string) => void;
   deleteActualItem: (itemId: string) => void;
+  setLeaveConfig: (dateKey: DateKey, leave?: LeaveConfig) => void;
 }
 
 const today = new Date();
@@ -49,6 +51,7 @@ interface LegacyDayRecord {
   completedTodoIds?: string[];
   actual?: string;
   actualItems?: TodoCalendarData['days'][DateKey]['actualItems'];
+  leave?: Partial<LeaveConfig>;
 }
 
 interface LegacyCalendarData {
@@ -64,6 +67,7 @@ function migrateData(rawData: unknown): { data: TodoCalendarData; didMigrate: bo
   const legacyData = rawData as LegacyCalendarData;
   const migratedDays = Object.fromEntries(
     Object.entries(legacyData.days ?? {}).map(([dateKey, day]) => {
+      const leaveNote = typeof day.leave?.note === 'string' ? day.leave.note.trim() : '';
       const actualItems =
         day.actualItems ??
         (day.actual ?? '')
@@ -83,6 +87,14 @@ function migrateData(rawData: unknown): { data: TodoCalendarData; didMigrate: bo
           inheritedTodoIds: day.inheritedTodoIds ?? [],
           completedTodoIds: day.completedTodoIds ?? [],
           actualItems,
+          ...(isLeavePeriod(day.leave?.period)
+            ? {
+                leave: {
+                  period: day.leave.period,
+                  ...(leaveNote ? { note: leaveNote } : {}),
+                },
+              }
+            : {}),
         },
       ];
     }),
@@ -330,6 +342,24 @@ export const useTodoStore = create<TodoStore>((set, get) => {
           ]),
         ) as TodoCalendarData['days'],
       }));
+    },
+    setLeaveConfig: (dateKey, leave) => {
+      commit((data) => {
+        const day = ensureDay(data, dateKey);
+        const nextDay = { ...day, leave };
+
+        if (!leave) {
+          delete nextDay.leave;
+        }
+
+        return {
+          ...data,
+          days: {
+            ...data.days,
+            [dateKey]: nextDay,
+          },
+        };
+      });
     },
   };
 });

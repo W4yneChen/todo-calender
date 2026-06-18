@@ -1,7 +1,16 @@
 import { FormEvent, KeyboardEvent, useEffect, useState } from 'react';
 import { addDays, getMonthLabel, getWeekdayLabel, parseDateKey } from '../lib/date';
+import { getLeaveLabel, getLeaveSummary, leavePeriodLabels } from '../lib/leave';
 import { ensureDay, getVisibleTodos } from '../lib/todos';
-import type { ActualItem, DateKey, SaveStatus, TodoCalendarData, VisibleTodo } from '../types/todos';
+import type {
+  ActualItem,
+  DateKey,
+  LeaveConfig,
+  LeavePeriod,
+  SaveStatus,
+  TodoCalendarData,
+  VisibleTodo,
+} from '../types/todos';
 
 interface DayDetailProps {
   data: TodoCalendarData;
@@ -16,6 +25,7 @@ interface DayDetailProps {
   onAddActualItem: (dateKey: DateKey, text: string) => void;
   onUpdateActualItem: (itemId: string, text: string) => void;
   onDeleteActualItem: (itemId: string) => void;
+  onSetLeaveConfig: (dateKey: DateKey, leave?: LeaveConfig) => void;
 }
 
 const saveStatusText: Record<SaveStatus, string> = {
@@ -26,13 +36,21 @@ const saveStatusText: Record<SaveStatus, string> = {
   error: '保存失败',
 };
 
+const leaveOptions: Array<{ label: string; value: LeavePeriod | 'none' }> = [
+  { label: '无', value: 'none' },
+  { label: leavePeriodLabels.full, value: 'full' },
+  { label: '上午', value: 'morning' },
+  { label: '下午', value: 'afternoon' },
+];
+
 interface TextEditorProps {
   text: string;
   onCommit: (text: string) => void;
   className?: string;
+  placeholder?: string;
 }
 
-function TextEditor({ text, onCommit, className = '' }: TextEditorProps) {
+function TextEditor({ text, onCommit, className = '', placeholder }: TextEditorProps) {
   const [draft, setDraft] = useState(text);
 
   useEffect(() => {
@@ -65,6 +83,7 @@ function TextEditor({ text, onCommit, className = '' }: TextEditorProps) {
       onChange={(event) => setDraft(event.target.value)}
       onBlur={commitDraft}
       onKeyDown={handleKeyDown}
+      placeholder={placeholder}
       className={[
         'min-w-0 flex-1 rounded-2xl bg-transparent px-1 py-0.5 text-sm font-semibold text-slate-900 outline-none transition hover:bg-slate-50 focus:bg-blue-50/60 focus:ring-4 focus:ring-blue-100',
         className,
@@ -86,10 +105,12 @@ export function DayDetail({
   onAddActualItem,
   onUpdateActualItem,
   onDeleteActualItem,
+  onSetLeaveConfig,
 }: DayDetailProps) {
   const [draftTodo, setDraftTodo] = useState('');
   const [draftActual, setDraftActual] = useState('');
   const [isInheritMode, setIsInheritMode] = useState(false);
+  const [isLeaveConfigOpen, setIsLeaveConfigOpen] = useState(false);
   const [selectedTodoIds, setSelectedTodoIds] = useState<string[]>([]);
 
   const selectedDay = ensureDay(data, selectedDate);
@@ -98,6 +119,11 @@ export function DayDetail({
   const inheritableTodos = openTodos.filter((todo) => !todo.isInheritedToNextDay);
   const nextDate = addDays(selectedDate, 1);
   const { year, monthIndex, day } = parseDateKey(selectedDate);
+  const leaveSummary = selectedDay.leave ? getLeaveSummary(selectedDay.leave) : '未请假';
+
+  useEffect(() => {
+    setIsLeaveConfigOpen(false);
+  }, [selectedDate]);
 
   const resetInheritance = () => {
     setIsInheritMode(false);
@@ -125,6 +151,28 @@ export function DayDetail({
   const confirmInheritance = () => {
     onInheritTodosToNextDay(selectedDate, selectedTodoIds);
     resetInheritance();
+  };
+
+  const handleLeaveChange = (value: LeavePeriod | 'none') => {
+    if (value === 'none') {
+      onSetLeaveConfig(selectedDate);
+      return;
+    }
+
+    onSetLeaveConfig(selectedDate, {
+      period: value,
+      ...(selectedDay.leave?.note ? { note: selectedDay.leave.note } : {}),
+    });
+  };
+
+  const handleLeaveNoteCommit = (note: string) => {
+    if (!selectedDay.leave) return;
+
+    const trimmedNote = note.trim();
+    onSetLeaveConfig(selectedDate, {
+      period: selectedDay.leave.period,
+      ...(trimmedNote ? { note: trimmedNote } : {}),
+    });
   };
 
   const renderTextEditor = (kind: 'todo' | 'actual', id: string, text: string) => {
@@ -272,6 +320,81 @@ export function DayDetail({
           <p className="text-xs font-semibold uppercase tracking-[0.12em] text-blue-400">实际记录</p>
           <p className="mt-2 text-2xl font-semibold text-blue-600">{selectedDay.actualItems.length}</p>
         </div>
+      </div>
+
+      <div className="mt-4 rounded-3xl border border-red-100 bg-red-50/70 p-3">
+        <div className="flex items-center justify-between gap-3">
+          <div className="min-w-0">
+            <p className="text-sm font-semibold text-slate-800">请假配置</p>
+            <p className="mt-0.5 truncate text-xs font-semibold text-red-500">{leaveSummary}</p>
+          </div>
+          <div className="flex shrink-0 items-center gap-2">
+            {selectedDay.leave ? (
+              <span className="rounded-full bg-red-400 px-2.5 py-1 text-[11px] font-semibold text-white">
+                {getLeaveLabel(selectedDay.leave)}
+              </span>
+            ) : null}
+            <button
+              type="button"
+              aria-label={isLeaveConfigOpen ? '收起请假配置' : '展开请假配置'}
+              aria-expanded={isLeaveConfigOpen}
+              onClick={() => setIsLeaveConfigOpen((current) => !current)}
+              className="grid size-8 place-items-center rounded-full bg-white text-red-500 shadow-ios-soft outline-none transition hover:-translate-y-0.5 focus:ring-4 focus:ring-red-100"
+            >
+              <span
+                className={[
+                  'block size-2 border-b-2 border-r-2 border-current transition',
+                  isLeaveConfigOpen ? 'rotate-[225deg] translate-y-0.5' : 'rotate-45 -translate-y-0.5',
+                ].join(' ')}
+              />
+            </button>
+          </div>
+        </div>
+        {isLeaveConfigOpen ? (
+          <div className="mt-3 space-y-3">
+            <div className="grid grid-cols-4 gap-1 rounded-full bg-white/80 p-1 shadow-[inset_0_1px_0_rgba(255,255,255,0.85)]">
+              {leaveOptions.map((option) => {
+                const isActive =
+                  option.value === 'none'
+                    ? !selectedDay.leave
+                    : selectedDay.leave?.period === option.value;
+
+                return (
+                  <button
+                    key={option.value}
+                    type="button"
+                    onClick={() => handleLeaveChange(option.value)}
+                    className={[
+                      'min-h-9 rounded-full px-2 text-xs font-semibold transition',
+                      isActive
+                        ? option.value === 'none'
+                          ? 'bg-slate-900 text-white shadow-ios-soft'
+                          : 'bg-red-400 text-white shadow-ios-soft'
+                        : 'text-slate-500 hover:bg-red-50 hover:text-red-500',
+                    ].join(' ')}
+                  >
+                    {option.label}
+                  </button>
+                );
+              })}
+            </div>
+            {selectedDay.leave ? (
+              <label className="block rounded-2xl bg-white/75 px-3 py-2">
+                <span className="block text-[11px] font-semibold text-slate-400">请假备注</span>
+                <TextEditor
+                  text={selectedDay.leave.note ?? ''}
+                  onCommit={handleLeaveNoteCommit}
+                  placeholder="例如：年假、病假、事假"
+                  className="mt-1 w-full text-sm placeholder:text-slate-300 focus:bg-red-50/70 focus:ring-red-100"
+                />
+              </label>
+            ) : (
+              <div className="rounded-2xl border border-dashed border-red-100 bg-white/60 px-3 py-2 text-xs font-semibold text-slate-400">
+                选择请假时段后可以填写具体假别
+              </div>
+            )}
+          </div>
+        ) : null}
       </div>
 
       <form onSubmit={handleTodoSubmit} className="mt-6 flex gap-2">

@@ -556,13 +556,11 @@
       "todos": [],
       "inheritedTodoIds": [],
       "completedTodoIds": [],
-      "actualItems": [
-        {
-          "id": "1d0f30b8-6f34-45b0-9998-d51312f81a2e",
-          "text": "病假",
-          "createdAt": "2026-06-02T04:00:00.000Z"
-        }
-      ]
+      "actualItems": [],
+      "leave": {
+        "period": "full",
+        "note": "病假"
+      }
     },
     "2026-06-03": {
       "todos": [],
@@ -682,13 +680,7 @@
       ]
     },
     "2026-06-18": {
-      "todos": [
-        {
-          "id": "74b84dcc-ab01-41c3-bd4f-7c6da6c8a634",
-          "text": "实打实",
-          "createdAt": "2026-06-18T04:00:00.000Z"
-        }
-      ],
+      "todos": [],
       "inheritedTodoIds": [],
       "completedTodoIds": [],
       "actualItems": [

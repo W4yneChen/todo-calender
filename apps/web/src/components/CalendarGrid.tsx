@@ -4,6 +4,7 @@ import {
   getCalendarMarkBadgeClassName,
   getCalendarMarkClassName,
 } from '../lib/holidays';
+import { getLeaveLabel, getLeaveSummary } from '../lib/leave';
 import { ensureDay, getCompletedTodoCount, getOpenTodoCount, getVisibleTodos } from '../lib/todos';
 import type { DateKey, TodoCalendarData } from '../types/todos';
 
@@ -40,6 +41,7 @@ export function CalendarGrid({
         {days.map((day) => {
           const dayRecord = ensureDay(data, day.key);
           const calendarMark = day.isBeforeMinimum ? undefined : getCalendarMark(day.key);
+          const leave = day.isBeforeMinimum ? undefined : dayRecord.leave;
           const openCount = day.isBeforeMinimum ? 0 : getOpenTodoCount(data, day.key);
           const completedCount = day.isBeforeMinimum ? 0 : getCompletedTodoCount(data, day.key);
           const actualCount = day.isBeforeMinimum ? 0 : dayRecord.actualItems.length;
@@ -80,6 +82,7 @@ export function CalendarGrid({
               className={[
                 'calendar-cell group',
                 calendarMark ? getCalendarMarkClassName(calendarMark.type) : '',
+                leave ? getCalendarMarkClassName('workday') : '',
                 day.isCurrentMonth ? 'text-slate-950' : 'text-slate-400',
                 isSelected ? 'calendar-cell-selected' : '',
                 day.isBeforeMinimum ? 'cursor-not-allowed opacity-30' : '',
@@ -95,7 +98,7 @@ export function CalendarGrid({
                 >
                   {day.day}
                 </span>
-                <span className="flex items-center gap-1">
+                <span className="flex flex-wrap items-center justify-end gap-1">
                   {calendarMark ? (
                     <span
                       className={[
@@ -104,6 +107,17 @@ export function CalendarGrid({
                       ].join(' ')}
                     >
                       {calendarMark.name}
+                    </span>
+                  ) : null}
+                  {leave ? (
+                    <span
+                      title={getLeaveSummary(leave)}
+                      className={[
+                        'rounded-full px-2 py-1 text-[10px] font-semibold',
+                        getCalendarMarkBadgeClassName('workday'),
+                      ].join(' ')}
+                    >
+                      {getLeaveLabel(leave)}
                     </span>
                   ) : null}
                   {hasActual ? <span className="size-2 rounded-full bg-emerald-400" /> : null}

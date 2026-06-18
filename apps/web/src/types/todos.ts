@@ -12,11 +12,19 @@ export interface ActualItem {
   createdAt: string;
 }
 
+export type LeavePeriod = 'full' | 'morning' | 'afternoon';
+
+export interface LeaveConfig {
+  period: LeavePeriod;
+  note?: string;
+}
+
 export interface DayRecord {
   todos: TodoItem[];
   inheritedTodoIds: string[];
   completedTodoIds: string[];
   actualItems: ActualItem[];
+  leave?: LeaveConfig;
 }
 
 export interface TodoCalendarData {

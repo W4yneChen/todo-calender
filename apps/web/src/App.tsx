@@ -24,6 +24,7 @@ export function App() {
     addActualItem,
     updateActualItem,
     deleteActualItem,
+    setLeaveConfig,
   } = useTodoStore();
 
   useEffect(() => {
@@ -69,6 +70,7 @@ export function App() {
             onAddActualItem={addActualItem}
             onUpdateActualItem={updateActualItem}
             onDeleteActualItem={deleteActualItem}
+            onSetLeaveConfig={setLeaveConfig}
           />
         </div>
       </div>
